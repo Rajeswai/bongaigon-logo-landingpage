@@ -39,13 +39,20 @@ video {
 /* ............................Navbar................ */
 .navbar {
   width: 100%;
-  position: sticky;
+  position: fixed;   /* Sticky effect */
   top: 0;
-  z-index: 999;
+  left: 0;
+  z-index: 9999;
   background: rgba(248, 244, 236, 0.88);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(185, 94, 47, 0.35);
   box-shadow: 0 10px 30px rgba(88, 99, 58, 0.08);
+}
+
+/* Page content jate navbar-er niche chole na jay */
+body {
+  padding-top: 105px;
 }
 
 .navbar-container {
@@ -67,15 +74,15 @@ video {
 
 .navbar-logo {
   /* Logo size significantly increased */
-  width: 85px; 
+  width: 85px;
   height: 85px;
   object-fit: contain;
   border-radius: 50%;
-  
+
   /* Background transparent jate navbar color er sathe mishe jay */
-  background: transparent; 
+  background: transparent;
   padding: 0;
-  
+
   /* Border/Shadow remove kora hoyeche clean look er jonno */
   border: none;
   box-shadow: none;
@@ -196,7 +203,7 @@ video {
   transform: translateY(-12px) rotate(-45deg);
 }
 
-/* ================= RESPONSIVE ================= / */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1024px) {
   .navbar-container {
@@ -219,6 +226,10 @@ video {
 }
 
 @media (max-width: 850px) {
+  body {
+    padding-top: 90px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -234,6 +245,7 @@ video {
     width: 100%;
     background: rgba(248, 244, 236, 0.96);
     backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     flex-direction: column;
     gap: 0;
     padding: 18px 0;
@@ -243,7 +255,7 @@ video {
     pointer-events: none;
     transform: translateY(-15px);
     transition: 0.3s ease;
-    margin-left: 0;  /* MOBILE UI ER JONNO MARGIN REMOVE KORA HOLO */
+    margin-left: 0; /* MOBILE UI ER JONNO MARGIN REMOVE KORA HOLO */
     margin-right: 0;
   }
 
@@ -279,6 +291,10 @@ video {
 }
 
 @media (max-width: 480px) {
+  body {
+    padding-top: 80px;
+  }
+
   .navbar-container {
     padding: 10px 18px;
   }
@@ -290,7 +306,7 @@ video {
   .brand-text p {
     letter-spacing: 1.8px;
   }
-  
+
   .navbar-logo {
     width: 55px;
     height: 55px;
@@ -1865,8 +1881,13 @@ div.hero-content p {
   overflow: hidden;
 }
 
-.builder-left { padding: 45px 40px; }
-.builder-right { padding: 45px 35px; }
+.builder-left {
+  padding: 45px 40px;
+}
+
+.builder-right {
+  padding: 45px 35px;
+}
 
 .builder-label,
 .portfolio-label {
@@ -1901,26 +1922,42 @@ div.hero-content p {
   white-space: nowrap;
 }
 
-.builder-main-title {
+/* FIXED: left heading now same elegant style as portfolio heading */
+.builder-main-title,
+.portfolio-main-title {
   font-family: "Cormorant Garamond", serif;
   font-size: 42px;
   line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: 0;
   color: #3F4A2A;
+}
+
+.builder-main-title {
   margin-bottom: 20px;
+  text-transform: none;
 }
 
 .portfolio-main-title {
   text-align: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
-  color: #3F4A2A;
   margin-bottom: 35px;
+}
+
+.builder-main-title .gold-text,
+.builder-main-title strong,
+.builder-main-title span,
+.portfolio-main-title .gold-text,
+.portfolio-main-title strong,
+.portfolio-main-title span {
+  color: #B95E2F;
+  font-weight: 500;
 }
 
 .gold-text {
   color: #B95E2F;
-  display: inline-block;
-  white-space: nowrap;
+  display: inline;
+  white-space: normal;
+  font-weight: 500;
 }
 
 .builder-desc {
@@ -2254,9 +2291,11 @@ div.hero-content p {
     white-space: nowrap;
   }
 
-  .builder-main-title {
-    font-size: 34px;
+  .builder-main-title,
+  .portfolio-main-title {
+    font-size: 16px;
     line-height: 1.08;
+    font-weight: 500;
   }
 
   .builder-stats {
@@ -2338,7 +2377,7 @@ div.hero-content p {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 7px;
   color: #B95E2F;
@@ -2531,7 +2570,7 @@ div.hero-content p {
 .footer-premium {
   background: linear-gradient(135deg, #5B6639 0%, #263119 100%);
   color: #ffffff;
-  padding: 46px 5.5%;
+  padding: 52px 5.5%;
   position: relative;
   overflow: hidden;
 }
@@ -2551,7 +2590,7 @@ div.hero-content p {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 0.8fr 1.7fr 0.8fr;
+  grid-template-columns: 0.85fr 1.7fr 0.8fr;
   align-items: center;
   gap: 34px;
 }
@@ -2589,19 +2628,35 @@ div.hero-content p {
 
 .simple-footer-info {
   text-align: center;
+  display: grid;
+  gap: 14px;
 }
 
-.simple-footer-info p {
-  margin: 6px 0;
+.footer-info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-info-block h4 {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #c99a48 !important;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.footer-info-block p {
+  margin: 0;
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.84);
-}
-
-.simple-footer-info strong {
-  color: #c99a48;
-  font-weight: 600;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 500;
+  text-align: center;
 }
 
 .simple-footer-copy {
@@ -2637,11 +2692,10 @@ div.hero-content p {
     flex-direction: column;
   }
 
-  .simple-footer-info p {
+  .footer-info-block p {
     font-size: 13px;
   }
 }
-
 /* =========================================================
    PROFESSIONAL PREMIUM ANIMATION EFFECTS
    Added safely at the end — existing CSS unchanged
@@ -4263,12 +4317,16 @@ body {
 }
 
 /* NAVBAR — deep premium olive */
+/* ............................Navbar................ */
 .navbar {
-  background:
-    radial-gradient(circle at 6% 12%, rgba(185, 94, 47, 0.22), transparent 22%),
-    linear-gradient(135deg, rgba(37, 49, 22, 0.98) 0%, rgba(63, 74, 42, 0.96) 55%, rgba(31, 42, 22, 0.98) 100%) !important;
-  border-bottom: 1px solid rgba(255, 249, 241, 0.18) !important;
-  box-shadow: 0 16px 40px rgba(31, 42, 22, 0.18) !important;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(248, 244, 236, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(185, 94, 47, 0.35);
+  box-shadow: 0 10px 30px rgba(88, 99, 58, 0.08);
 }
 
 .navbar-menu li a,
@@ -6046,21 +6104,35 @@ video {
   font-size: 13px;
 }
 
+.sticky-input {
+  flex: 1;
+  min-width: 160px;
+}
+
+.sticky-input svg {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .sticky-input input {
+  flex: 1;
+  min-width: 0;
   width: 100%;
+  display: block;
   border: none;
   outline: none;
   background: transparent;
   color: #ffffff;
   font-family: "Inter", sans-serif;
+  font-size: 13px;
+  opacity: 1;
 }
 
 .sticky-input input::placeholder {
   color: rgba(255, 255, 255, 0.58);
-}
-
-.sticky-input {
-  flex: 1;
+  opacity: 1;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
 }
 
 .sticky-select {
@@ -6389,4 +6461,514 @@ video {
 /* Safety: any CTA using this class opens popup through JSX, no anchor scroll */
 .popup-trigger-btn {
   cursor: pointer;
+}
+
+/* =========================================================
+   FINAL REQUEST FIXES — HERO POSITION, HEADING COLORS,
+   POPUP FORM POLISH
+   Only requested visual fixes added, old design unchanged.
+========================================================= */
+
+/* Hero: "Quiet Luxury" badge smaller + all hero text/buttons lifted upward */
+.hero.hero-custom .hero-content {
+  transform: translateY(-42px) !important;
+}
+
+.hero.hero-custom .hero-badge {
+  font-size: 11px !important;
+  letter-spacing: 2.2px !important;
+  padding: 10px 22px !important;
+  margin-bottom: 22px !important;
+}
+
+.hero.hero-custom h1,
+.hero.hero-custom .hero-title,
+.hero.hero-custom div.hero-content h1 {
+  margin-bottom: 18px !important;
+}
+
+.hero.hero-custom .hero-line {
+  margin: 4px 0 22px !important;
+}
+
+.hero.hero-custom .hero-content p,
+.hero.hero-custom .hero-text,
+.hero.hero-custom div.hero-content p {
+  margin-bottom: 24px !important;
+}
+
+.hero.hero-custom .hero-buttons {
+  margin-top: 0 !important;
+}
+
+/* Explore Homes button popup trigger styling */
+.hero-btn.primary,
+.hero-btn.primary.popup-trigger-btn {
+  cursor: pointer !important;
+}
+
+/* All main section headings same premium h2 look */
+.about-content h2,
+.walkthrough-header h2,
+.gallery-header h2,
+.amenities-header h2,
+.location-content h2,
+.contact-left h2,
+.builder-main-title,
+.portfolio-main-title,
+.section-popup-cta-content h2,
+.section-popup-cta-content h3,
+.popup-form h2,
+.popup-form h3 {
+  font-family: "Cormorant Garamond", serif !important;
+  font-weight: 500 !important;
+  line-height: 1.08 !important;
+}
+
+/* About Project: "Built/Build for Life" orange like other highlighted words */
+.about-content h2 span,
+.about-content h2 strong,
+.about-content h2 .gold-text {
+  color: #B95E2F !important;
+}
+
+/* Location: "Perfectly Located" green like normal heading text */
+.location-content h2 strong,
+.location-content h2 span,
+.location-content h2 .gold-text {
+  color: #263119 !important;
+}
+
+/* Contact/Form: "Extraordinary Together" orange */
+.contact-left h2 strong,
+.contact-left h2 span,
+.contact-left h2 .gold-text,
+.contact-form-card h3 strong,
+.contact-form-card h3 span {
+  color: #B95E2F !important;
+}
+
+/* Popup form: keep it pre-filled-looking friendly and placeholders visible beside icons */
+.popup-form {
+  border: 1px solid rgba(185, 94, 47, 0.32) !important;
+}
+
+.popup-input {
+  min-height: 52px !important;
+  background: #ffffff !important;
+}
+
+.popup-input svg {
+  flex: 0 0 auto !important;
+  color: #B95E2F !important;
+}
+
+.popup-input input::placeholder,
+.popup-input textarea::placeholder,
+.popup-input select {
+  color: rgba(63, 74, 42, 0.72) !important;
+  opacity: 1 !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+/* If JSX uses labels inside popup inputs, keep them aligned like placeholders */
+.popup-input label,
+.popup-input span.placeholder-text {
+  color: rgba(63, 74, 42, 0.72) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+}
+
+/* Mobile hero balance after lifting content */
+@media (max-width: 850px) {
+  .hero.hero-custom .hero-content {
+    transform: translateY(-22px) !important;
+  }
+
+  .hero.hero-custom .hero-badge {
+    font-size: 10px !important;
+    letter-spacing: 1.8px !important;
+    padding: 9px 18px !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero.hero-custom .hero-content {
+    transform: translateY(-14px) !important;
+  }
+}
+
+/* ===== FINAL NAVBAR FIX ===== */
+body {
+  padding-top: 105px !important;
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 999999 !important;
+}
+
+/* ===== HERO BUTTON AS BUTTON FIX ===== */
+.hero-btn {
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== POPUP FORM ===== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  background: rgba(0, 0, 0, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.popup-form-card {
+  width: 100%;
+  max-width: 480px;
+  background: #fffdf8;
+  border-radius: 28px;
+  padding: 42px 36px;
+  position: relative;
+  border: 1px solid rgba(185, 94, 47, 0.25);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.popup-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: none;
+  background: #f4efe5;
+  color: #3f4a2a;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-form-card h3 {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #3f4a2a;
+  margin-bottom: 28px;
+}
+
+.popup-form-card h3 strong {
+  color: #b95e2f;
+  font-weight: 500;
+}
+
+/* ===== ABOUT BUILDER TITLE SAME AS PORTFOLIO TITLE ===== */
+.builder-main-title {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 42px !important;
+  line-height: 1.08 !important;
+  font-weight: 500 !important;
+  color: #3f4a2a !important;
+  text-transform: none !important;
+}
+
+.builder-main-title .gold-text,
+.builder-main-title strong {
+  color: #b95e2f !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 80px !important;
+  }
+
+  .builder-main-title {
+    font-size: 34px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== FORCE FIX ABOUT BUILDER HEADING ===== */
+
+.builder-left h1,
+.builder-left h2,
+.builder-left .builder-main-title,
+.builder-section .builder-left h1,
+.builder-section .builder-left h2,
+.builder-section .builder-main-title {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 42px !important;
+  line-height: 1.08 !important;
+  font-weight: 500 !important;
+  color: #3F4A2A !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  margin: 0 0 20px !important;
+}
+
+.builder-left h1 *,
+.builder-left h2 *,
+.builder-left .builder-main-title *,
+.builder-section .builder-left h1 *,
+.builder-section .builder-left h2 *,
+.builder-section .builder-main-title * {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #B95E2F !important;
+}
+
+/* left box e text jate 3 line na hoy */
+.builder-left {
+  padding: 45px 34px !important;
+}
+
+@media (max-width: 600px) {
+  .builder-left h1,
+  .builder-left h2,
+  .builder-left .builder-main-title {
+    font-size: 30px !important;
+  }
+}
+
+
+
+/* ===== STICKY INPUT PLACEHOLDER CLEAR ASH COLOR FIX ===== */
+
+.sticky-input input {
+  flex: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  display: block !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.sticky-input input::placeholder {
+  color: #9ca3af !important;   /* ash/gray */
+  opacity: 1 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.sticky-input svg {
+  flex-shrink: 0 !important;
+  color: #9ca3af !important;
+  stroke: #9ca3af !important;
+}
+
+
+/* ===== FINAL FORCE FOOTER FIX ===== */
+
+.footer-premium .footer-info-block h4 {
+  color: #B95E2F !important;   /* Deep orange */
+  font-weight: 800 !important;
+  display: block !important;
+}
+
+.footer-premium .footer-info-block p {
+  color: #ffffff !important;
+  display: block !important;
+}
+
+.footer-premium .simple-footer-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+
+/* ===== FLOOR PLAN MODAL HEADER ALWAYS VISIBLE ===== */
+
+.plan-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999999 !important;
+  background: rgba(0, 0, 0, 0.92) !important;
+  padding: 115px 24px 24px !important;
+}
+
+.plan-modal-header {
+  position: fixed !important;
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 60px) !important;
+  max-width: 1320px !important;
+  height: 64px !important;
+  background: #fffdf8 !important;
+  border-radius: 18px !important;
+  z-index: 1000000000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 20px !important;
+}
+
+.plan-modal-actions {
+  display: flex !important;
+  gap: 10px !important;
+}
+
+.plan-modal-actions button {
+  width: 42px !important;
+  height: 42px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: #263119 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+}
+
+.plan-modal-body {
+  height: calc(100vh - 140px) !important;
+  overflow: auto !important;
+}
+
+.plan-modal-body img {
+  width: 1200px !important;
+  max-width: none !important;
+}
+
+/* ================= UNIFORM HEADING SIZE FOR ALL SECTIONS ================= */
+
+/* ================= UNIFORM HEADING SIZE FOR ALL SECTION H3 ================= */
+/* App.css-এর একদম শেষে এই কোডটা বসাও */
+
+.about-content h3,
+.walkthrough-header h3,
+.gallery-header h3,
+.amenities-header h3,
+.location-content h3,
+.contact-left h3,
+.builder-main-title,
+.portfolio-main-title,
+.floorplans-header h3,
+.floorplan-header h3,
+.floor-plan-header h3 {
+  font-size: clamp(42px, 4vw, 68px) !important;
+  line-height: 1.08 !important;
+  font-weight: 500 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 700px) {
+  .about-content h3,
+  .walkthrough-header h3,
+  .gallery-header h3,
+  .amenities-header h3,
+  .location-content h3,
+  .contact-left h3,
+  .builder-main-title,
+  .portfolio-main-title,
+  .floorplans-header h3,
+  .floorplan-header h3,
+  .floor-plan-header h3 {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+  }
+}
+
+
+/* ================= ABOUT BUILDER HEADING SIZE FIX ================= */
+/* App.css-এর একদম শেষে এই কোডটা বসাও */
+
+.builder-main-title,
+.portfolio-main-title {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 42px !important;   /* আগের থেকে ছোট করা হলো */
+  line-height: 1.08 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  color: #3F4A2A !important;
+}
+
+.builder-main-title strong,
+.builder-main-title span,
+.portfolio-main-title strong,
+.portfolio-main-title span {
+  color: #B95E2F !important;
+  font-weight: 500 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 700px) {
+  .builder-main-title,
+  .portfolio-main-title {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* ================= FLOOR PLAN HEADING SIZE FIX ================= */
+/* App.css-এর একদম শেষে এই কোডটা বসাও */
+
+.floorplans-header h2,
+.floorplan-header h2,
+.floor-plans-header h2,
+.floorplans-section h2,
+.floorplan-section h2 {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 56px !important;   /* আগের থেকে ছোট করা হলো */
+  line-height: 1.08 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  margin: 0 auto 20px !important;
+  max-width: 760px !important;  /* width কমানো হলো */
+  text-align: center !important;
+  color: #ffffff !important;
+}
+
+/* Orange text */
+.floorplans-header h2 strong,
+.floorplan-header h2 strong,
+.floor-plans-header h2 strong,
+.floorplans-section h2 strong,
+.floorplan-section h2 strong,
+.floorplans-header h2 span,
+.floorplan-header h2 span,
+.floor-plans-header h2 span,
+.floorplans-section h2 span,
+.floorplan-section h2 span {
+  color: #B95E2F !important;
+  font-weight: 500 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 700px) {
+  .floorplans-header h2,
+  .floorplan-header h2,
+  .floor-plans-header h2,
+  .floorplans-section h2,
+  .floorplan-section h2 {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    max-width: 100% !important;
+  }
 }

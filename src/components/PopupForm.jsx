@@ -1,5 +1,5 @@
 import React from "react";
-import { X, User, Phone, Mail, Send } from "lucide-react";
+import { X, User, Phone, Mail, Send, Clock } from "lucide-react";
 import "../App.css";
 
 const PopupForm = ({ isOpen, onClose }) => {
@@ -30,12 +30,26 @@ const PopupForm = ({ isOpen, onClose }) => {
           <input type="email" placeholder="Email Address" />
         </div>
 
-        <select className="popup-input select-box">
-          <option>Interested In</option>
-          <option>2.5 BHK</option>
-          <option>3 BHK</option>
-          <option>3.5 BHK</option>
-        </select>
+        {/* Flat Type */}
+        <div className="popup-input">
+          <select className="select-box">
+            <option>Interested In</option>
+            <option>2.5 BHK</option>
+            <option>3 BHK</option>
+            <option>3.5 BHK</option>
+          </select>
+        </div>
+
+        {/* Preferred Time */}
+        <div className="popup-input">
+          <Clock size={16} />
+          <select className="select-box">
+            <option>Preferred Time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
 
         <button className="popup-submit">
           Submit Enquiry <Send size={16} />

@@ -15,18 +15,23 @@ const Footer = () => {
         </div>
 
         <div className="simple-footer-info">
-          <p>
-            <strong>Site Address:</strong> Subham Park, Near Durga Mandir,
-            Gurunanak Nagar, Chapaguri Road, Bongaigaon, Assam - 783380
-          </p>
+          <div className="footer-info-block">
+            <h4>Site Address</h4>
+            <p>
+              Subham Park, Near Durga Mandir, Gurunanak Nagar,
+              Chapaguri Road, Bongaigaon, Assam - 783380
+            </p>
+          </div>
 
-          <p>
-            <strong>RERA Registration No.:</strong> RERAA BO 167 of 2024-2025
-          </p>
+          <div className="footer-info-block">
+            <h4>RERA Registration No.</h4>
+            <p>RERAA BO 167 of 2024-2025</p>
+          </div>
 
-          <p>
-            <strong>Available at:</strong> https://rera.assam.gov.in
-          </p>
+          <div className="footer-info-block">
+            <h4>Available At</h4>
+            <p>https://rera.assam.gov.in</p>
+          </div>
         </div>
 
         <div className="simple-footer-copy">

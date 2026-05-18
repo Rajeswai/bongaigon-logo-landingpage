@@ -3,7 +3,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import "../App.css";
 import heroImage from "../assets/images/herosectionimage.png";
 
-const Hero = () => {
+const Hero = ({ onOpenPopup }) => {
   return (
     <>
       <section
@@ -32,9 +32,9 @@ const Hero = () => {
           </p>
 
           <div className="hero-buttons">
-            <a href="#contact" className="hero-btn primary">
-              Explore Homes <ArrowRight size={18} />
-            </a>
+            <button type="button" className="hero-btn primary" onClick={onOpenPopup}>
+              Download Brochure<ArrowRight size={18} />
+            </button>
 
             <a href="#amenities" className="hero-btn secondary">
               View Amenities <ArrowRight size={18} />
@@ -43,10 +43,10 @@ const Hero = () => {
         </div>
       </section>
 
-      <a href="#contact" className="mobile-sticky-cta">
+      <button type="button" className="mobile-sticky-cta" onClick={onOpenPopup}>
         <Phone size={18} />
         Enquire Now
-      </a>
+      </button>
     </>
   );
 };

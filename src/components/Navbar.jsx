@@ -1,8 +1,10 @@
-﻿import React from "react";
+﻿// src/components/Navbar.jsx
+
+import React from "react";
 import "../App.css";
 import logo from "../assets/images/logoimage.png";
 
-const Navbar = () => {
+const Navbar = ({ onOpenPopup }) => {
   const navItems = [
     { name: "Overview", id: "about-project" },
     { name: "Amenities", id: "amenities" },
@@ -24,7 +26,8 @@ const Navbar = () => {
     const section = document.getElementById(id);
     if (!section) return;
 
-    const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 90;
+    const navbarHeight =
+      document.querySelector(".navbar")?.offsetHeight || 90;
 
     window.scrollTo({
       top: section.offsetTop - navbarHeight,
@@ -32,6 +35,16 @@ const Navbar = () => {
     });
 
     closeMenu();
+  };
+
+  // Enquire Now button click -> Popup Open
+  const handleEnquireClick = (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    if (onOpenPopup) {
+      onOpenPopup();
+    }
   };
 
   return (
@@ -56,20 +69,24 @@ const Navbar = () => {
         <ul className="navbar-menu">
           {navItems.map((item) => (
             <li key={item.name}>
-              <a href={`#${item.id}`} onClick={(e) => handleScroll(e, item.id)}>
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => handleScroll(e, item.id)}
+              >
                 {item.name}
               </a>
             </li>
           ))}
         </ul>
 
-        <a
-          href="#contact"
+        {/* CLICK করলে Popup Form Open হবে */}
+        <button
+          type="button"
           className="navbar-btn"
-          onClick={(e) => handleScroll(e, "contact")}
+          onClick={handleEnquireClick}
         >
           Enquire Now
-        </a>
+        </button>
       </div>
     </nav>
   );

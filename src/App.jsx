@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-shell">
-        <Navbar />
+        <Navbar onOpenPopup={this.openPopup} />
         <Hero onOpenPopup={this.openPopup} />
         <Highlights />
 

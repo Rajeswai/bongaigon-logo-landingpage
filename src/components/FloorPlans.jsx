@@ -1,18 +1,26 @@
 import React from "react";
-import { LayoutPanelLeft, Layers, Grid3X3, X, ZoomIn, ZoomOut } from "lucide-react";
+import {
+  LayoutPanelLeft,
+  Layers,
+  Grid3X3,
+  X,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+} from "lucide-react";
 import "../App.css";
 
-import mainmap from "../assets/images/mainmap.jpeg";
+import mainmap from "../assets/images/mainplan.jpg";
 
-import map1 from "../assets/images/map1.jpeg";
-import map2 from "../assets/images/map2.jpeg";
-import map3 from "../assets/images/map3.jpeg";
-import map4 from "../assets/images/map4.jpeg";
+import map1 from "../assets/images/map1.jpg";
+import map2 from "../assets/images/map2.jpg";
+import map3 from "../assets/images/map3.jpg";
+import map4 from "../assets/images/map4.jpg";
 
-import unitmap1 from "../assets/images/unitmap1.jpeg";
-import unitmap2 from "../assets/images/unitmap2.jpeg";
-import unitmap3 from "../assets/images/unitmap3.jpeg";
-import unitmap4 from "../assets/images/unitmap4.jpeg";
+import unitmap1 from "../assets/images/unitmap1.jpg";
+import unitmap2 from "../assets/images/unitmap2.jpg";
+import unitmap3 from "../assets/images/unitmap3.jpg";
+import unitmap4 from "../assets/images/unitmap4.jpg";
 
 class FloorPlans extends React.Component {
   constructor(props) {
@@ -58,14 +66,18 @@ class FloorPlans extends React.Component {
 
   zoomIn = () => {
     this.setState((prev) => ({
-      zoom: Math.min(prev.zoom + 0.2, 3),
+      zoom: Math.min(prev.zoom + 0.25, 3),
     }));
   };
 
   zoomOut = () => {
     this.setState((prev) => ({
-      zoom: Math.max(prev.zoom - 0.2, 0.7),
+      zoom: Math.max(prev.zoom - 0.25, 0.7),
     }));
+  };
+
+  resetZoom = () => {
+    this.setState({ zoom: 1 });
   };
 
   render() {
@@ -129,6 +141,10 @@ class FloorPlans extends React.Component {
                 onClick={() => this.openModal(mainmap, "Main Plan")}
               >
                 <img src={mainmap} alt="Main Plan" />
+                <div className="plan-view-badge">
+                  <ZoomIn size={16} />
+                  Click To Zoom
+                </div>
               </div>
             </div>
           )}
@@ -149,6 +165,10 @@ class FloorPlans extends React.Component {
                     onClick={() => this.openModal(plan.image, plan.title)}
                   >
                     <img src={plan.image} alt={plan.title} />
+                    <div className="plan-view-badge small">
+                      <ZoomIn size={15} />
+                      View
+                    </div>
                     <p>{plan.title}</p>
                   </div>
                 ))}
@@ -172,6 +192,10 @@ class FloorPlans extends React.Component {
                     onClick={() => this.openModal(plan.image, plan.title)}
                   >
                     <img src={plan.image} alt={plan.title} />
+                    <div className="plan-view-badge small">
+                      <ZoomIn size={15} />
+                      View
+                    </div>
                     <p>{plan.title}</p>
                   </div>
                 ))}
@@ -179,32 +203,39 @@ class FloorPlans extends React.Component {
             </div>
           )}
         </div>
+
         {modalImage && (
           <div className="plan-modal">
             <div className="plan-modal-header">
               <h3>{modalTitle}</h3>
 
               <div className="plan-modal-actions">
-                <button type="button" onClick={this.zoomOut}>
+                <button type="button" onClick={this.zoomOut} title="Zoom Out">
                   <ZoomOut size={18} />
                 </button>
 
-                <button type="button" onClick={this.zoomIn}>
+                <button type="button" onClick={this.resetZoom} title="Reset Zoom">
+                  <RotateCcw size={18} />
+                </button>
+
+                <button type="button" onClick={this.zoomIn} title="Zoom In">
                   <ZoomIn size={18} />
                 </button>
 
-                <button type="button" onClick={this.closeModal}>
+                <button type="button" onClick={this.closeModal} title="Back / Close">
                   <X size={20} />
                 </button>
               </div>
             </div>
 
             <div className="plan-modal-body">
-              <img
-                src={modalImage}
-                alt={modalTitle}
-                style={{ transform: `scale(${zoom})` }}
-              />
+              <div className="plan-modal-image-wrap">
+                <img
+                  src={modalImage}
+                  alt={modalTitle}
+                  style={{ transform: `scale(${zoom})` }}
+                />
+              </div>
             </div>
           </div>
         )}
