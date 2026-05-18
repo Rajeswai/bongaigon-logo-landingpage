@@ -5315,3 +5315,425 @@ body .location-section .map-pin-card svg * {
   opacity: 1 !important;
   font-weight: 500 !important;
 }
+
+/* =========================================================
+   FINAL MOBILE RESPONSIVE PATCH ONLY
+   Design/layout same rakha hoyeche. Sudhu mobile/tablet responsive
+   fix add kora holo - navbar mobile-e show/open hobe and all sections
+   screen width er modhye thakbe.
+========================================================= */
+
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+img,
+iframe,
+video {
+  max-width: 100% !important;
+}
+
+.app-shell,
+.page-shell,
+.navbar,
+.hero,
+.highlight-marquee-section,
+.about-project,
+.amenities-section,
+.walkthrough-section,
+.gallery-section,
+.location-section,
+.floorplan-section,
+.floorplans-section,
+.contact-premium-section,
+.contact-section,
+.builder-section,
+.footer-premium {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Navbar mobile fix */
+@media (max-width: 850px) {
+  .navbar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  .navbar-container {
+    width: 100% !important;
+    min-height: 76px !important;
+    padding: 8px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  .navbar-logo-box {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+  }
+
+  .navbar-logo {
+    width: 54px !important;
+    height: 54px !important;
+    flex: 0 0 54px !important;
+  }
+
+  .brand-text {
+    min-width: 0 !important;
+  }
+
+  .brand-text h1 {
+    font-size: 18px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+  }
+
+  .brand-text p {
+    font-size: 9px !important;
+    letter-spacing: 1.4px !important;
+    white-space: nowrap !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+    flex: 0 0 34px !important;
+    z-index: 10001 !important;
+  }
+
+  .navbar-btn {
+    display: none !important;
+  }
+
+  .navbar-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 14px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+    z-index: 10000 !important;
+    max-height: calc(100vh - 76px) !important;
+    overflow-y: auto !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-12px) !important;
+  }
+
+  .navbar-menu.active,
+  .navbar-menu.open,
+  .navbar-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .navbar-menu li {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .navbar-menu li a {
+    width: 100% !important;
+    display: block !important;
+    padding: 14px 18px !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 70px !important;
+    padding: 7px 12px !important;
+  }
+
+  .navbar-logo {
+    width: 48px !important;
+    height: 48px !important;
+    flex-basis: 48px !important;
+  }
+
+  .brand-text h1 {
+    font-size: 16px !important;
+  }
+
+  .brand-text p {
+    font-size: 8px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .navbar-menu {
+    max-height: calc(100vh - 70px) !important;
+  }
+}
+
+/* Tablet responsive - keep same design, only stack safely */
+@media (max-width: 1100px) {
+  .hero,
+  .about-project,
+  .location-section,
+  .builder-section,
+  .contact-premium-section,
+  .contact-section,
+  .footer-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-content,
+  .about-content,
+  .location-content,
+  .contact-left,
+  .contact-form-card,
+  .builder-left,
+  .builder-right {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Mobile all section fix */
+@media (max-width: 700px) {
+  .hero,
+  .about-project,
+  .amenities-section,
+  .walkthrough-section,
+  .gallery-section,
+  .location-section,
+  .floorplan-section,
+  .floorplans-section,
+  .contact-premium-section,
+  .contact-section,
+  .builder-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-content,
+  .about-image-card,
+  .walkthrough-video-card,
+  .gallery-card,
+  .location-map-card,
+  .floor-main-card,
+  .floor-side-card,
+  .contact-form-card,
+  .builder-left,
+  .builder-right,
+  .portfolio-box,
+  .builder-quote-card {
+    border-radius: 20px !important;
+  }
+
+  .hero h1,
+  .about-content h2,
+  .amenities-header h2,
+  .walkthrough-header h2,
+  .gallery-header h2,
+  .location-content h2,
+  .floorplan-header h2,
+  .contact-left h2,
+  .builder-main-title,
+  .portfolio-main-title {
+    font-size: clamp(29px, 9vw, 38px) !important;
+    line-height: 1.12 !important;
+    word-break: normal !important;
+  }
+
+  .hero-content p,
+  .about-content p,
+  .amenities-subtitle,
+  .gallery-subtitle,
+  .location-text,
+  .floorplan-header p,
+  .contact-left p,
+  .builder-desc {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero-content {
+    padding: 28px 20px !important;
+  }
+
+  .hero-details,
+  .about-features,
+  .amenities-flow,
+  .gallery-grid,
+  .distance-list,
+  .builder-stats,
+  .single-project-grid,
+  .portfolio-tabs,
+  .form-row,
+  .footer-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-feature,
+  .builder-stat {
+    border-right: none !important;
+  }
+
+  .gallery-card,
+  .gallery-tall,
+  .gallery-wide,
+  .gallery-small,
+  .gallery-bottom {
+    width: 100% !important;
+    height: 250px !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .about-image-card {
+    height: 360px !important;
+  }
+
+  .hero-image-wrap {
+    height: 310px !important;
+  }
+
+  .location-map-card {
+    height: 320px !important;
+    min-height: auto !important;
+  }
+
+  .floorplan-slider {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    padding-bottom: 10px !important;
+  }
+
+  .floor-main-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+  }
+
+  .floor-main-card img,
+  .floor-side-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 360px !important;
+    object-fit: contain !important;
+  }
+
+  .floor-side-card {
+    display: none !important;
+  }
+
+  .floor-arrow {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .floor-arrow.left {
+    left: 6px !important;
+  }
+
+  .floor-arrow.right {
+    right: 6px !important;
+  }
+
+  .contact-form-card {
+    padding: 30px 18px !important;
+  }
+
+  .builder-left,
+  .builder-right {
+    padding: 30px 18px !important;
+  }
+
+  .builder-quote-card,
+  .builder-left-note,
+  .quote-text-container {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .builder-values {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .footer-container {
+    gap: 28px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    text-align: center !important;
+  }
+
+  .footer-logo-box,
+  .footer-socials,
+  .footer-contact-item {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .walkthrough-label,
+  .gallery-label,
+  .amenities-label-wrap,
+  .location-label,
+  .floorplan-label,
+  .builder-label,
+  .portfolio-label,
+  .contact-label {
+    gap: 8px !important;
+  }
+
+  .walkthrough-label span,
+  .gallery-label span,
+  .amenities-label-wrap span,
+  .location-label span,
+  .floorplan-header .floorplan-label span,
+  .builder-label span,
+  .portfolio-label span,
+  .contact-label i,
+  .contact-label::after {
+    width: 32px !important;
+    flex-basis: 32px !important;
+  }
+
+  .walkthrough-label p,
+  .gallery-label p,
+  .amenities-label-wrap p,
+  .location-label p,
+  .floorplan-header .floorplan-label p,
+  .builder-label p,
+  .portfolio-label p,
+  .contact-label span {
+    font-size: 10px !important;
+    letter-spacing: 2.5px !important;
+  }
+
+  .mobile-sticky-cta {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    height: 52px !important;
+    font-size: 13px !important;
+  }
+}
+
