@@ -83,8 +83,8 @@ class AboutBuilder extends React.Component {
           </div>
 
           <h2 className="builder-main-title">
-            Built on Trust. <br />
-            <span className="gold-text">Driven by Quality.</span>
+            Built on Trust <br />
+            <span className="gold-text">Driven by Quality</span>
           </h2>
 
           <p className="builder-desc">
@@ -113,8 +113,8 @@ class AboutBuilder extends React.Component {
             </div>
             <div className="note-text-content">
               <p>
-                Building more than structures, <br />
-                we build <strong>trust</strong> for a better tomorrow.
+                Building more than structures <br />
+                we build <strong>trust</strong> for a better tomorrow
               </p>
             </div>
             <div className="left-note-dots"></div>
@@ -129,8 +129,8 @@ class AboutBuilder extends React.Component {
           </div>
 
           <h2 className="portfolio-main-title">
-            Crafting Landmarks.{" "}
-            <span className="gold-text">Creating Trust.</span>
+            Crafting Landmarks{" "}
+            <span className="gold-text">Creating Trust</span>
           </h2>
 
           <div className="portfolio-tabs">

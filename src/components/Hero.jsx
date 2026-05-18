@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <>
       {/* Navbar er sathe mil rakhar jonno id="about-project" kora holo */}
-      <section className="hero" id="about-project">
+     <section className="hero" id="home">
         <div className="hero-leaf-bg"></div>
 
         <div className="hero-content">

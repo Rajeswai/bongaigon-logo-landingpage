@@ -68,7 +68,7 @@ class FloorPlans extends React.Component {
 
           <h2>
             Smart Layouts for <br />
-            <strong>Modern Living.</strong>
+            <strong>Modern Living</strong>
           </h2>
 
         </div>

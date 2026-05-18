@@ -13,7 +13,7 @@ const Contact = () => {
         </div>
         <h2>
   Let's Build Something <br />
-  <strong>Extraordinary Together.</strong>
+  <strong>Extraordinary Together</strong>
 </h2>
         <p>
           Share your requirements with us and our team will get back to you with the best solutions for your dream space.

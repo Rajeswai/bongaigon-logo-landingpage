@@ -80,7 +80,7 @@ class LocationAdvantage extends React.Component {
 
           <h2>
             Perfectly Located <br />
-            <strong>for a Better Life.</strong>
+            <strong>for a Better Life</strong>
           </h2>
 
           <div className="location-divider">

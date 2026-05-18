@@ -30,8 +30,8 @@ const Gallery = () => {
         </div>
 
         <h2>
-          Spaces That Inspire, <br />
-          <strong>Details That Matter.</strong>
+          Spaces That Inspire <br />
+          <strong>Details That Matter</strong>
         </h2>
 
         <p className="gallery-subtitle">
