@@ -13,14 +13,16 @@ const Navbar = () => {
     { name: "About Us", id: "about-builder" },
   ];
 
+  const closeMenu = () => {
+    const checkbox = document.getElementById("nav-toggle");
+    if (checkbox) checkbox.checked = false;
+  };
+
   const handleScroll = (e, id) => {
     e.preventDefault();
 
     const section = document.getElementById(id);
-    if (!section) {
-      console.log("Section not found:", id);
-      return;
-    }
+    if (!section) return;
 
     const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 90;
 
@@ -28,6 +30,8 @@ const Navbar = () => {
       top: section.offsetTop - navbarHeight,
       behavior: "smooth",
     });
+
+    closeMenu();
   };
 
   return (
@@ -40,6 +44,14 @@ const Navbar = () => {
             className="navbar-logo"
           />
         </div>
+
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+
+        <label htmlFor="nav-toggle" className="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
         <ul className="navbar-menu">
           {navItems.map((item) => (
