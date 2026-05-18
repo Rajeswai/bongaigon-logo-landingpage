@@ -1,0 +1,90 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1f3122;
+  background: #f7f5ef;
+  --font-body: Georgia, serif;
+  --font-heading: 'Playfair Display', serif;
+  --bg: #f7f5ef;
+  --surface: #ffffff;
+  --surface-soft: #fbf7ef;
+  --surface-strong: #f0e9d8;
+  --text: #1f3122;
+  --text-muted: #5b6a58;
+  --green: #1f3d2f;
+  --green-soft: #2e5b43;
+  --gold: #b6913b;
+  --gold-soft: #f1e2b1;
+  --border: #dad2c1;
+  --shadow: 0 24px 80px rgba(31, 49, 34, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  width: 100%;
+  background: #fff;
+  color: var(--text);
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    font-size: 15px;
+  }
+}
