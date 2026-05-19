@@ -8141,48 +8141,57 @@ button.mobile-sticky-btn {
   transform: translate(-50%, 140px) !important;
 }
 
-/* ===== FLOOR PLAN MODAL: BUTTONS ALWAYS VISIBLE ===== */
-.plan-modal {
-  z-index: 999999 !important;
-  padding-top: 52px !important;
-}
+/* ===== PRODUCTION FIX: FLOOR PLAN MODAL BUTTONS ONLY ===== */
 
-.plan-modal-header {
+.plan-modal .plan-modal-header {
   position: fixed !important;
-  top: 4px !important;
+  top: 20px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: calc(100% - 24px) !important;
-  max-width: 1540px !important;
-  z-index: 1000001 !important;
+  z-index: 999999999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-shrink: 0 !important;
 }
 
-.plan-modal-actions {
+.plan-modal .plan-modal-header .plan-modal-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+  z-index: 1000000000 !important;
+}
+
+.plan-modal .plan-modal-header .plan-modal-actions button {
+  min-width: 42px !important;
+  width: 42px !important;
+  min-height: 42px !important;
+  height: 42px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+
   position: relative !important;
-  z-index: 1000002 !important;
+  z-index: 1000000001 !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
-.plan-modal-actions button {
-  position: relative !important;
-  z-index: 1000003 !important;
-}
-
-/* Modal open thakle sticky form hide */
-.plan-modal .desktop-sticky-form,
-.plan-modal .mobile-sticky-cta,
-.plan-modal .sticky-popup-form {
-  display: none !important;
-}
-
-/* ===== MOBILE + DESKTOP ===== */
-@media (max-width: 768px) {
-  .plan-modal {
-    padding-top: 44px !important;
-  }
-
-  .plan-modal-header {
-    top: 2px !important;
-    width: calc(100% - 12px) !important;
-    border-radius: 14px !important;
-  }
+.plan-modal .plan-modal-header .plan-modal-actions button svg {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  stroke-width: 2.4 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }

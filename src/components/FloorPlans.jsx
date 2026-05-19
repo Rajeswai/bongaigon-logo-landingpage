@@ -1,4 +1,5 @@
 import React from "react";
+import { createPortal } from "react-dom";
 import {
   LayoutPanelLeft,
   Layers,
@@ -48,6 +49,20 @@ class FloorPlans extends React.Component {
     ];
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.modalImage && this.state.modalImage) {
+      document.body.classList.add("floorplan-modal-open");
+    }
+
+    if (prevState.modalImage && !this.state.modalImage) {
+      document.body.classList.remove("floorplan-modal-open");
+    }
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove("floorplan-modal-open");
+  }
+
   openModal = (image, title) => {
     this.setState({
       modalImage: image,
@@ -80,166 +95,178 @@ class FloorPlans extends React.Component {
     this.setState({ zoom: 1 });
   };
 
+  renderModal() {
+    const { modalImage, modalTitle, zoom } = this.state;
+
+    if (!modalImage) return null;
+
+    return createPortal(
+      <div className="plan-modal">
+        <div className="plan-modal-header">
+          <h3>{modalTitle}</h3>
+
+          <div className="plan-modal-actions">
+            <button type="button" onClick={this.zoomOut} title="Zoom Out">
+              <ZoomOut size={18} />
+            </button>
+
+            <button type="button" onClick={this.resetZoom} title="Reset Zoom">
+              <RotateCcw size={18} />
+            </button>
+
+            <button type="button" onClick={this.zoomIn} title="Zoom In">
+              <ZoomIn size={18} />
+            </button>
+
+            <button type="button" onClick={this.closeModal} title="Back / Close">
+              <X size={20} />
+              <span>Back</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="plan-modal-body">
+          <div className="plan-modal-image-wrap">
+            <img
+              src={modalImage}
+              alt={modalTitle}
+              style={{ transform: `scale(${zoom})` }}
+            />
+          </div>
+        </div>
+      </div>,
+      document.body
+    );
+  }
+
   render() {
-    const { activeTab, modalImage, modalTitle, zoom } = this.state;
+    const { activeTab } = this.state;
 
     return (
-      <section className="floorplan-section" id="plan">
-        <div className="floorplan-header">
-          <div className="floorplan-label">
-            <span></span>
-            <p>Floor Plan</p>
-            <span></span>
+      <>
+        <section className="floorplan-section" id="plan">
+          <div className="floorplan-header">
+            <div className="floorplan-label">
+              <span></span>
+              <p>Floor Plan</p>
+              <span></span>
+            </div>
+
+            <h2>
+              Smart Layouts for <br />
+              <strong>Modern Living</strong>
+            </h2>
           </div>
 
-          <h2>
-            Smart Layouts for <br />
-            <strong>Modern Living</strong>
-          </h2>
-        </div>
+          <div className="floorplan-tabs">
+            <button
+              type="button"
+              className={activeTab === "main" ? "active" : ""}
+              onClick={() => this.setState({ activeTab: "main" })}
+            >
+              <LayoutPanelLeft size={20} />
+              Main Plan
+            </button>
 
-        <div className="floorplan-tabs">
-          <button
-            type="button"
-            className={activeTab === "main" ? "active" : ""}
-            onClick={() => this.setState({ activeTab: "main" })}
-          >
-            <LayoutPanelLeft size={20} />
-            Main Plan
-          </button>
+            <button
+              type="button"
+              className={activeTab === "floor" ? "active" : ""}
+              onClick={() => this.setState({ activeTab: "floor" })}
+            >
+              <Layers size={20} />
+              Floor Plan
+            </button>
 
-          <button
-            type="button"
-            className={activeTab === "floor" ? "active" : ""}
-            onClick={() => this.setState({ activeTab: "floor" })}
-          >
-            <Layers size={20} />
-            Floor Plan
-          </button>
+            <button
+              type="button"
+              className={activeTab === "unit" ? "active" : ""}
+              onClick={() => this.setState({ activeTab: "unit" })}
+            >
+              <Grid3X3 size={20} />
+              Unit Plan
+            </button>
+          </div>
 
-          <button
-            type="button"
-            className={activeTab === "unit" ? "active" : ""}
-            onClick={() => this.setState({ activeTab: "unit" })}
-          >
-            <Grid3X3 size={20} />
-            Unit Plan
-          </button>
-        </div>
+          <div className="floorplan-content">
+            {activeTab === "main" && (
+              <div className="plan-panel main-panel">
+                <div className="plan-panel-title">
+                  <span></span>
+                  <h3>Main Plan</h3>
+                  <span></span>
+                </div>
 
-        <div className="floorplan-content">
-          {activeTab === "main" && (
-            <div className="plan-panel main-panel">
-              <div className="plan-panel-title">
-                <span></span>
-                <h3>Main Plan</h3>
-                <span></span>
-              </div>
-
-              <div
-                className="main-plan-image-box clickable-plan"
-                onClick={() => this.openModal(mainmap, "Main Plan")}
-              >
-                <img src={mainmap} alt="Main Plan" />
-                <div className="plan-view-badge">
-                  <ZoomIn size={16} />
-                  Click To Zoom
+                <div
+                  className="main-plan-image-box clickable-plan"
+                  onClick={() => this.openModal(mainmap, "Main Plan")}
+                >
+                  <img src={mainmap} alt="Main Plan" />
+                  <div className="plan-view-badge">
+                    <ZoomIn size={16} />
+                    Click To Zoom
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {activeTab === "floor" && (
-            <div className="plan-panel">
-              <div className="plan-panel-title">
-                <span></span>
-                <h3>Floor Plan</h3>
-                <span></span>
-              </div>
+            {activeTab === "floor" && (
+              <div className="plan-panel">
+                <div className="plan-panel-title">
+                  <span></span>
+                  <h3>Floor Plan</h3>
+                  <span></span>
+                </div>
 
-              <div className="plan-grid">
-                {this.floorPlans.map((plan, index) => (
-                  <div
-                    className="plan-card clickable-plan"
-                    key={index}
-                    onClick={() => this.openModal(plan.image, plan.title)}
-                  >
-                    <img src={plan.image} alt={plan.title} />
-                    <div className="plan-view-badge small">
-                      <ZoomIn size={15} />
-                      View
+                <div className="plan-grid">
+                  {this.floorPlans.map((plan, index) => (
+                    <div
+                      className="plan-card clickable-plan"
+                      key={index}
+                      onClick={() => this.openModal(plan.image, plan.title)}
+                    >
+                      <img src={plan.image} alt={plan.title} />
+                      <div className="plan-view-badge small">
+                        <ZoomIn size={15} />
+                        View
+                      </div>
+                      <p>{plan.title}</p>
                     </div>
-                    <p>{plan.title}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {activeTab === "unit" && (
-            <div className="plan-panel">
-              <div className="plan-panel-title">
-                <span></span>
-                <h3>Unit Plan</h3>
-                <span></span>
-              </div>
+            {activeTab === "unit" && (
+              <div className="plan-panel">
+                <div className="plan-panel-title">
+                  <span></span>
+                  <h3>Unit Plan</h3>
+                  <span></span>
+                </div>
 
-              <div className="plan-grid">
-                {this.unitPlans.map((plan, index) => (
-                  <div
-                    className="plan-card clickable-plan"
-                    key={index}
-                    onClick={() => this.openModal(plan.image, plan.title)}
-                  >
-                    <img src={plan.image} alt={plan.title} />
-                    <div className="plan-view-badge small">
-                      <ZoomIn size={15} />
-                      View
+                <div className="plan-grid">
+                  {this.unitPlans.map((plan, index) => (
+                    <div
+                      className="plan-card clickable-plan"
+                      key={index}
+                      onClick={() => this.openModal(plan.image, plan.title)}
+                    >
+                      <img src={plan.image} alt={plan.title} />
+                      <div className="plan-view-badge small">
+                        <ZoomIn size={15} />
+                        View
+                      </div>
+                      <p>{plan.title}</p>
                     </div>
-                    <p>{plan.title}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-
-        {modalImage && (
-          <div className="plan-modal">
-            <div className="plan-modal-header">
-              <h3>{modalTitle}</h3>
-
-              <div className="plan-modal-actions">
-                <button type="button" onClick={this.zoomOut} title="Zoom Out">
-                  <ZoomOut size={18} />
-                </button>
-
-                <button type="button" onClick={this.resetZoom} title="Reset Zoom">
-                  <RotateCcw size={18} />
-                </button>
-
-                <button type="button" onClick={this.zoomIn} title="Zoom In">
-                  <ZoomIn size={18} />
-                </button>
-
-                <button type="button" onClick={this.closeModal} title="Back / Close">
-                  <X size={20} />
-                </button>
-              </div>
-            </div>
-
-            <div className="plan-modal-body">
-              <div className="plan-modal-image-wrap">
-                <img
-                  src={modalImage}
-                  alt={modalTitle}
-                  style={{ transform: `scale(${zoom})` }}
-                />
-              </div>
-            </div>
+            )}
           </div>
-        )}
-      </section>
+        </section>
+
+        {this.renderModal()}
+      </>
     );
   }
 }
