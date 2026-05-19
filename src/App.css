@@ -8398,37 +8398,58 @@ main {
   box-sizing: border-box !important;
 }
 
-/* ===== MOBILE NAVBAR SLICK FIX ONLY ===== */
-@media (max-width: 600px) {
-  .navbar,
+/* ===== ULTRA SLIM MOBILE NAVBAR FIX ===== */
+/* App.css-এর একদম শেষে paste করো */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 !important;
+  }
+
   .navbar-container {
-    height: 56px !important;
-    min-height: 56px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 14px !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   body {
-    padding-top: 56px !important;
+    padding-top: 48px !important;
   }
 
-  .navbar-container {
-    padding: 0 18px !important;
+  .navbar-logo-box {
+    transform: none !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .navbar-logo {
-    width: 42px !important;
-    height: 42px !important;
+    width: 34px !important;
+    height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
   }
 
   .hamburger {
-    width: 30px !important;
-    height: 22px !important;
+    display: flex !important;
+    width: 26px !important;
+    height: 18px !important;
+    margin-left: auto !important;
+  }
+
+  .hamburger span {
+    height: 2px !important;
   }
 
   .navbar-menu {
-    top: 56px !important;
+    top: 48px !important;
   }
 
   .hero.hero-custom {
-    min-height: calc(100vh - 56px) !important;
+    min-height: calc(100vh - 48px) !important;
   }
 }
