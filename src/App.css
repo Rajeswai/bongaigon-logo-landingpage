@@ -8126,117 +8126,51 @@ button.mobile-sticky-btn {
   }
 }
 
-
-
-
-
-
 /* =========================================================
-   FINAL FIX: Floorplan modal buttons + Sticky form footer hide
+   ONLY FIX: Footer asar age sticky form/CTA vanish
+   Extra kono design change kora hoyni
 ========================================================= */
 
-/* FLOORPLAN MODAL BUTTONS MOBILE + DESKTOP */
-.plan-modal {
-  z-index: 2147483647 !important;
+.footer-premium {
+  position: relative !important;
+  z-index: 1000002 !important;
 }
 
-.plan-modal-header {
-  position: fixed !important;
-  top: 14px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: calc(100% - 24px) !important;
-  max-width: 900px !important;
-  min-height: 56px !important;
-  z-index: 2147483647 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 10px !important;
-  padding: 8px 10px !important;
-  background: #fffdf8 !important;
-  border-radius: 18px !important;
-}
-
-.plan-modal-actions {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  flex-shrink: 0 !important;
-}
-
-.plan-modal-actions button {
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  border-radius: 50% !important;
-  border: none !important;
-  background: #263119 !important;
-  color: #ffffff !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-.plan-modal-actions button svg {
-  width: 18px !important;
-  height: 18px !important;
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-}
-
-.plan-modal-actions button:last-child {
-  width: 70px !important;
-  min-width: 70px !important;
-  border-radius: 999px !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-}
-
-/* MOBILE MODAL BODY */
-@media (max-width: 700px) {
-  .plan-modal {
-    padding: 86px 10px 14px !important;
+/* Footer viewport-e dhuklei sticky form/CTA fade out hobe */
+@supports (animation-timeline: view()) {
+  .footer-premium {
+    view-timeline-name: --footer-reveal;
+    view-timeline-axis: block;
   }
 
-  .plan-modal-title,
-  .plan-modal-header h3,
-  .plan-modal-header h2 {
-    font-size: 14px !important;
-    line-height: 1.2 !important;
-    white-space: normal !important;
+  .desktop-sticky-form,
+  .desktop-sticky-form.show,
+  .mobile-sticky-btn,
+  .mobile-sticky-btn.show,
+  .mobile-sticky-cta,
+  .mobile-sticky-cta.show {
+    animation-name: stickyVanishBeforeFooter !important;
+    animation-timeline: --footer-reveal !important;
+    animation-range: entry -120px entry 80px !important;
+    animation-fill-mode: both !important;
   }
 
-  .plan-modal-body {
-    height: calc(100vh - 110px) !important;
-    overflow: auto !important;
-    border-radius: 14px !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .plan-modal-body img {
-    width: 980px !important;
-    max-width: none !important;
-    height: auto !important;
+  @keyframes stickyVanishBeforeFooter {
+    from {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
   }
 }
 
-/* STICKY FORM / CTA FOOTER ASAR AGE HIDE */
-body.footer-visible .desktop-sticky-form,
-body.footer-visible .mobile-sticky-cta,
-body.footer-visible .mobile-sticky-btn,
-body.footer-visible .sticky-mobile-cta {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transform: translate(-50%, 130px) !important;
+/* Browser jodi scroll-timeline support na kore, footer sticky form-er opore thakbe */
+.footer-premium {
+  isolation: isolate !important;
 }
 
-body.footer-visible .mobile-sticky-cta,
-body.footer-visible .mobile-sticky-btn,
-body.footer-visible .sticky-mobile-cta {
-  transform: translateY(120px) !important;
-}
