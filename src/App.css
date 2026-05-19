@@ -8377,74 +8377,63 @@ main {
   font-weight: 300 !important;
 }
 
-/* ===== MOBILE NAVBAR ONLY: SLIM FIX ===== */
-@media (max-width: 850px) {
+/* ===== FINAL FORCE MOBILE NAVBAR SLIM ===== */
+@media screen and (max-width: 850px) {
+  header.navbar,
   .navbar {
-    height: 62px !important;
-    min-height: 62px !important;
-    max-height: 62px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
     padding: 0 !important;
+    margin: 0 !important;
     overflow: hidden !important;
   }
 
+  header.navbar .navbar-container,
+  .navbar .navbar-container,
   .navbar-container {
-    height: 62px !important;
-    min-height: 62px !important;
-    max-height: 62px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
     padding: 0 18px !important;
+    margin: 0 auto !important;
+    align-items: center !important;
   }
 
   .navbar-logo-box {
-    height: 62px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     transform: none !important;
     align-items: center !important;
   }
 
   .navbar-logo {
-    width: 42px !important;
-    height: 42px !important;
-    max-height: 42px !important;
+    width: 46px !important;
+    height: 46px !important;
+    max-width: 46px !important;
+    max-height: 46px !important;
   }
 
   .hamburger {
-    width: 28px !important;
-    height: 20px !important;
+    width: 30px !important;
+    height: 22px !important;
+    padding: 0 !important;
     margin-left: auto !important;
   }
 
   .hamburger span {
-    height: 2.5px !important;
+    height: 3px !important;
     background: #ffffff !important;
   }
 
-  .navbar-menu {
-    top: 62px !important;
-  }
-
   body {
-    padding-top: 62px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar,
-  .navbar-container,
-  .navbar-logo-box {
-    height: 58px !important;
-    min-height: 58px !important;
-    max-height: 58px !important;
-  }
-
-  .navbar-logo {
-    width: 38px !important;
-    height: 38px !important;
+    padding-top: 64px !important;
   }
 
   .navbar-menu {
-    top: 58px !important;
-  }
-
-  body {
-    padding-top: 58px !important;
+    top: 64px !important;
   }
 }
