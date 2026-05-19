@@ -6972,3 +6972,19 @@ body {
     max-width: 100% !important;
   }
 }
+
+/* =========================================================
+   MOBILE BOTTOM ENQUIRE BUTTON REMOVE FIX
+   Mobile screen-e niche je floating "ENQUIRE NOW" button aschilo, seta off kora holo.
+   Extra design change kora hoyni.
+========================================================= */
+@media (max-width: 900px) {
+  .mobile-sticky-cta,
+  .mobile-sticky-btn {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(120px) !important;
+  }
+}
