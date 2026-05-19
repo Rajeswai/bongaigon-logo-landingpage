@@ -8357,38 +8357,5 @@ main {
   min-height: 650px !important; /* height আরও নিচের দিকে বাড়বে */
 }
 
-/* ===== CONTACT SECTION BOTTOM GAP REMOVE ===== */
-/* এই কোডটা App.css-এর একদম শেষে paste করো */
 
-.contact-premium-section {
-  min-height: auto !important;
-  padding: 15px 8% 30px !important; /* আগে 80px ছিল */
-}
 
-.contact-left {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.contact-form-card {
-  margin-bottom: 0 !important;
-}
-
-.contact-highlights {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Desktop view-তে নিচের অতিরিক্ত ফাঁকা অংশ কমাবে */
-@media (min-width: 1101px) {
-  .contact-premium-section {
-    padding-bottom: 10px !important;
-  }
-}
-
-/* Mobile view */
-@media (max-width: 1100px) {
-  .contact-premium-section {
-    padding-bottom: 30px !important;
-  }
-}
