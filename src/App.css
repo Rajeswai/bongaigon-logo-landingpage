@@ -8357,5 +8357,23 @@ main {
   min-height: 650px !important; /* height আরও নিচের দিকে বাড়বে */
 }
 
+/* ===== DOWNLOAD BROCHURE HEADING - ELEGANT FONT ===== */
+/* App.css-এর শেষে paste করো */
 
+.contact-form-card h3 {
+  font-family: "Playfair Display", serif !important;
+  font-size: 34px !important;
+  font-weight: 300 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  margin-bottom: 35px !important;
+  color: #3f4a2a !important; /* Dark Green */
+}
+
+.contact-form-card h3 strong {
+  font-family: "Playfair Display", serif !important;
+  color: #b95e2f !important; /* Orange */
+  font-weight: 300 !important;
+}
 

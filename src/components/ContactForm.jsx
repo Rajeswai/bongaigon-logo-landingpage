@@ -60,7 +60,7 @@ const Contact = () => {
 
       <div className="contact-form-card">
         <h3>
-          Let’s Find the Perfect <strong>Space for You</strong>
+          Download <strong>Brochure </strong>
         </h3>
 
         <form>
