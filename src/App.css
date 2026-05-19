@@ -7930,3 +7930,129 @@ button.footer-enquiry-btn,
 button.mobile-sticky-btn {
   cursor: pointer !important;
 }
+
+/* =========================================================
+   FINAL EXTRA FIX - FLOOR PLAN BACK BUTTON + MOBILE WHITE GAP
+   Only requested changes added. Existing design unchanged.
+========================================================= */
+
+/* Remove white gap between navbar and hero section */
+.navbar {
+  margin-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+}
+
+.hero,
+.hero.hero-custom {
+  margin-top: 0 !important;
+  border-top: 0 !important;
+}
+
+/* Navbar fixed thakbe, kintu extra white space thakbe na */
+@media (max-width: 850px) {
+  body {
+    padding-top: 72px !important;
+  }
+
+  html {
+    scroll-padding-top: 72px !important;
+  }
+
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .navbar-container {
+    min-height: 72px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero,
+  .hero.hero-custom {
+    margin-top: 0 !important;
+  }
+}
+
+/* Floor plan modal e Back button visible */
+.plan-modal {
+  z-index: 1000002 !important;
+}
+
+.plan-modal-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000003 !important;
+  background: rgba(0, 0, 0, 0.88) !important;
+  padding: 0 4px !important;
+}
+
+/* Close button ke Back button er moto show korbe */
+.plan-modal-actions button:last-child {
+  width: auto !important;
+  min-width: 92px !important;
+  height: 42px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #d77a42, #b95e2f) !important;
+  border: 1px solid rgba(215, 122, 66, 0.95) !important;
+  color: #ffffff !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.7px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 10px 28px rgba(185, 94, 47, 0.38) !important;
+}
+
+.plan-modal-actions button:last-child svg,
+.plan-modal-actions button:last-child i,
+.plan-modal-actions button:last-child span {
+  display: none !important;
+}
+
+.plan-modal-actions button:last-child::before {
+  content: "← Back" !important;
+  display: inline-block !important;
+}
+
+/* Mobile e back button top e clear dekhabe */
+@media (max-width: 700px) {
+  .plan-modal {
+    padding: 10px !important;
+  }
+
+  .plan-modal-header {
+    height: 54px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .plan-modal-header h3 {
+    font-size: 20px !important;
+  }
+
+  .plan-modal-actions {
+    gap: 8px !important;
+  }
+
+  .plan-modal-actions button {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .plan-modal-actions button:last-child {
+    width: auto !important;
+    min-width: 86px !important;
+    height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 12px !important;
+  }
+
+  .plan-modal-body {
+    border-radius: 14px !important;
+  }
+}
