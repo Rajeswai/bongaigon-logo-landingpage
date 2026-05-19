@@ -7932,106 +7932,170 @@ button.mobile-sticky-btn {
 }
 
 /* =========================================================
-   FINAL EXTRA FIX - FLOOR PLAN BACK BUTTON + MOBILE WHITE GAP
-   Only requested changes added. Existing design unchanged.
-========================================================= */
+   FINAL FIX ONLY:
+   1) Floorplan popup Back button visible on DESKTOP + MOBILE
+   2) Mobile navbar and hero section white gap remove
+   ========================================================= */
 
-/* Remove white gap between navbar and hero section */
-.navbar {
-  margin-bottom: 0 !important;
-  border-bottom-width: 0 !important;
-}
-
-.hero,
-.hero.hero-custom {
-  margin-top: 0 !important;
-  border-top: 0 !important;
-}
-
-/* Navbar fixed thakbe, kintu extra white space thakbe na */
-@media (max-width: 850px) {
-  body {
-    padding-top: 72px !important;
-  }
-
-  html {
-    scroll-padding-top: 72px !important;
-  }
-
-  .navbar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-
-  .navbar-container {
-    min-height: 72px !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .hero,
-  .hero.hero-custom {
-    margin-top: 0 !important;
-  }
-}
-
-/* Floor plan modal e Back button visible */
+/* Floorplan modal header/back button - desktop and mobile both */
 .plan-modal {
-  z-index: 1000002 !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  background: rgba(0, 0, 0, 0.94) !important;
+  padding: 96px 18px 18px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .plan-modal-header {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1000003 !important;
-  background: rgba(0, 0, 0, 0.88) !important;
-  padding: 0 4px !important;
+  position: fixed !important;
+  top: 18px !important;
+  left: 18px !important;
+  right: 18px !important;
+  transform: none !important;
+  width: auto !important;
+  max-width: none !important;
+  height: 62px !important;
+  padding: 0 16px !important;
+  border-radius: 16px !important;
+  background: #fffdf8 !important;
+  border: 1px solid rgba(185, 94, 47, 0.38) !important;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.45) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
-/* Close button ke Back button er moto show korbe */
+.plan-modal-header h2,
+.plan-modal-header h3 {
+  margin: 0 !important;
+  color: #263119 !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  max-width: 55% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.plan-modal-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+.plan-modal-actions button {
+  height: 42px !important;
+  min-width: 42px !important;
+  border: none !important;
+  border-radius: 999px !important;
+  background: #263119 !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Last action button will show as BACK button */
 .plan-modal-actions button:last-child {
   width: auto !important;
   min-width: 92px !important;
-  height: 42px !important;
   padding: 0 18px !important;
-  border-radius: 999px !important;
-  background: linear-gradient(135deg, #d77a42, #b95e2f) !important;
-  border: 1px solid rgba(215, 122, 66, 0.95) !important;
-  color: #ffffff !important;
+  font-size: 0 !important;
+}
+
+.plan-modal-actions button:last-child::after {
+  content: "Back" !important;
   font-family: "Inter", sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.7px !important;
-  text-transform: uppercase !important;
-  box-shadow: 0 10px 28px rgba(185, 94, 47, 0.38) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  color: #ffffff !important;
 }
 
-.plan-modal-actions button:last-child svg,
-.plan-modal-actions button:last-child i,
-.plan-modal-actions button:last-child span {
-  display: none !important;
+.plan-modal-body {
+  width: 100% !important;
+  height: calc(100vh - 116px) !important;
+  margin: 0 !important;
+  overflow: auto !important;
+  border-radius: 16px !important;
+  background: #111111 !important;
+  display: block !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
-.plan-modal-actions button:last-child::before {
-  content: "← Back" !important;
-  display: inline-block !important;
+.plan-modal-body img {
+  width: 1200px !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
 }
 
-/* Mobile e back button top e clear dekhabe */
-@media (max-width: 700px) {
+/* Mobile white gap remove: navbar-er niche hero direct start hobe */
+@media (max-width: 850px) {
+  html,
+  body {
+    background: #263119 !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  .navbar {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-bottom: 0 !important;
+    background: #263119 !important;
+    z-index: 999999 !important;
+  }
+
+  .navbar-container {
+    margin-bottom: 0 !important;
+  }
+
+  .hero.hero-custom {
+    margin-top: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .navbar + .hero,
+  .navbar + .hero.hero-custom,
+  .navbar + section,
+  .navbar + div {
+    margin-top: 0 !important;
+  }
+
   .plan-modal {
-    padding: 10px !important;
+    padding: 74px 10px 14px !important;
   }
 
   .plan-modal-header {
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
     height: 54px !important;
-    margin-bottom: 10px !important;
+    padding: 0 10px 0 14px !important;
+    border-radius: 14px !important;
   }
 
+  .plan-modal-header h2,
   .plan-modal-header h3 {
-    font-size: 20px !important;
+    font-size: 17px !important;
+    max-width: 145px !important;
   }
 
   .plan-modal-actions {
@@ -8039,20 +8103,25 @@ button.mobile-sticky-btn {
   }
 
   .plan-modal-actions button {
-    width: 36px !important;
-    height: 36px !important;
-    flex-shrink: 0 !important;
+    height: 38px !important;
+    min-width: 38px !important;
   }
 
   .plan-modal-actions button:last-child {
-    width: auto !important;
-    min-width: 86px !important;
-    height: 38px !important;
-    padding: 0 14px !important;
-    font-size: 12px !important;
+    min-width: 82px !important;
+    padding: 0 16px !important;
+  }
+
+  .plan-modal-actions button:last-child::after {
+    font-size: 13px !important;
   }
 
   .plan-modal-body {
+    height: calc(100vh - 88px) !important;
     border-radius: 14px !important;
+  }
+
+  .plan-modal-body img {
+    width: 1050px !important;
   }
 }
