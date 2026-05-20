@@ -39,16 +39,18 @@ video {
 /* ............................Navbar................ */
 .navbar {
   width: 100%;
-  height: 74px;
+  height: 150px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  background: rgba(248, 244, 236, 0.96); /* Off-white */
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(185, 94, 47, 0.25);
-  box-shadow: 0 10px 30px rgba(88, 99, 58, 0.08);
+
+  background: transparent !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
 }
 
 html,
@@ -58,12 +60,12 @@ body {
 }
 
 body {
-  padding-top: 74px;
+  padding-top: 118px;
 }
 
 .navbar-container {
-  max-width: 1320px;
-  height: 74px;
+  max-width: 1560px;
+  height: 150px;
   margin: 0 auto;
   padding: 0 30px;
   display: flex;
@@ -79,8 +81,8 @@ body {
 }
 
 .navbar-logo {
-  width: 64px;
-  height: 64px;
+  width: 108px;
+  height: 90px;
   object-fit: contain;
   border-radius: 50%;
   background: transparent;
@@ -95,9 +97,10 @@ body {
   display: flex;
   align-items: center;
   gap: 36px;
-  margin: 0 36px 0 140px;
+  margin: 0 36px 0 300px;
   padding: 0;
   flex: unset;
+  background: transparent !important;
 }
 
 .navbar-menu li {
@@ -194,7 +197,7 @@ body {
 
   .navbar-menu {
     gap: 24px;
-    margin: 0 24px;
+    margin: 0 24px 0 130px;
   }
 
   .navbar-menu li a {
@@ -211,20 +214,26 @@ body {
 
 @media (max-width: 850px) {
   .navbar {
-    height: 68px !important;
-    min-height: 68px !important;
-    max-height: 68px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+
+    background: transparent !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow: none !important;
   }
 
   .navbar-container {
-    height: 68px !important;
-    min-height: 68px !important;
-    max-height: 68px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
     padding: 0 18px !important;
   }
 
   body {
-    padding-top: 68px !important;
+    padding-top: 76px !important;
   }
 
   .hamburger {
@@ -240,17 +249,19 @@ body {
 
   .navbar-menu {
     position: absolute;
-    top: 68px !important;
+    top: 76px !important;
     left: 0;
     width: 100%;
-    background: rgba(248, 244, 236, 0.98); /* Off-white */
+
+    background: rgba(255, 255, 255, 0.18) !important;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+
     flex-direction: column;
     gap: 0;
     padding: 18px 0;
-    border-bottom: 1px solid rgba(185, 94, 47, 0.25);
-    box-shadow: 0 18px 35px rgba(88, 99, 58, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: none !important;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-15px);
@@ -276,8 +287,8 @@ body {
   }
 
   .navbar-logo {
-    width: 52px !important;
-    height: 52px !important;
+    width: 64px !important;
+    height: 64px !important;
   }
 
   .navbar-logo-box {
@@ -287,25 +298,31 @@ body {
 
 @media (max-width: 480px) {
   .navbar {
-    height: 62px !important;
-    min-height: 62px !important;
-    max-height: 62px !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    max-height: 72px !important;
+
+    background: transparent !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow: none !important;
   }
 
   .navbar-container {
-    height: 62px !important;
-    min-height: 62px !important;
-    max-height: 62px !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    max-height: 72px !important;
     padding: 0 16px !important;
   }
 
   body {
-    padding-top: 62px !important;
+    padding-top: 72px !important;
   }
 
   .navbar-logo {
-    width: 48px !important;
-    height: 48px !important;
+    width: 58px !important;
+    height: 58px !important;
   }
 
   .hamburger {
@@ -314,7 +331,8 @@ body {
   }
 
   .navbar-menu {
-    top: 62px !important;
+    top: 72px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
   }
 }
 

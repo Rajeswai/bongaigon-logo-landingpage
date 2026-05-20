@@ -26,7 +26,7 @@ class Gallery extends React.Component {
       { image: indoorGames, title: "Indoor Games Room", className: "gallery-bottom" },
       { image: gymnasium, title: "Semi-Aerial View", className: "gallery-bottom" },
       { image: splashPool, title: "Splash Pool", className: "gallery-bottom" },
-      { image: picture1, title: "Premium View", className: "gallery-bottom" },
+      { image: picture1, title: "Semi-Aerial View", className: "gallery-bottom" },
     ];
   }
 

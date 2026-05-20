@@ -46,13 +46,13 @@ const Amenities = () => {
     {
       icon: <Car />,
       title: "Covered Parking",
-      description: "Ample & secure parking space for common areas only",
+      description: "Ample & secure parking space for residents & guests.",
     },
     {
       icon: <Zap />,
       title: "Power Backup",
       description:
-        "Uninterrupted power backup for a hassle-free living experience.",
+        "Uninterrupted power backup for common areas only",
     },
   ];
 
