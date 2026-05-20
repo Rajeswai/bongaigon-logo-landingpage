@@ -27,7 +27,7 @@ const Hero = ({ onOpenPopup }) => {
           </div>
 
           <p className="hero-text">
-            Premium 2.5, 3 &amp; 3.5 BHK residences in the heart of Bongaigaon.
+            Premium 3 &amp; 4 BHK residences in the heart of Bongaigaon.
             Where modern living meets everyday convenience.
           </p>
 

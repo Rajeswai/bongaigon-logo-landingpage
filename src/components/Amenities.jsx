@@ -20,8 +20,8 @@ const Amenities = () => {
     },
     {
       icon: <Building2 />,
-      title: "Clubhouse",
-      description: "Elegant clubhouse for celebrations & social gatherings.",
+      title: "Club house",
+      description: "Elegant club house for celebrations & social gatherings.",
     },
     {
       icon: <Trees />,
@@ -35,8 +35,8 @@ const Amenities = () => {
     },
     {
       icon: <Waves />,
-      title: "Swimming Pool",
-      description: "Relax & rejuvenate in our luxurious swimming pool.",
+      title: "Splash Pool",
+      description: "Relax & rejuvenate in our luxurious splash pool.",
     },
     {
       icon: <ShieldCheck />,
@@ -46,7 +46,7 @@ const Amenities = () => {
     {
       icon: <Car />,
       title: "Covered Parking",
-      description: "Ample & secure parking space for residents & guests.",
+      description: "Ample & secure parking space for common areas only",
     },
     {
       icon: <Zap />,
@@ -67,7 +67,7 @@ const Amenities = () => {
 
         <h2>
           Designed for Comfort <br />
-          <strong>Built for Better Living</strong>
+          <strong>Instead of Better use Modern</strong>
         </h2>
 
         <div className="amenities-divider">

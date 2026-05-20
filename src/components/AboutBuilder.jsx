@@ -53,6 +53,9 @@ class AboutBuilder extends React.Component {
           { name: "Subham Garden", location: "Jorhat" },
           { name: "Subham Solitaire", location: "Agartala" },
           { name: "Subham Ashray", location: "Garal" },
+          { name: "Subham Park", location: "Sonarigaon" },
+          { name: "Subham Kishori Heights", location: "Dibrugarh" },
+          { name: "Subham The Peak", location: "GS Road" },
         ],
       },
       commercial: {
@@ -83,8 +86,8 @@ class AboutBuilder extends React.Component {
           </div>
 
           <h2 className="builder-main-title">
-            Built on Trust <br />
-            <span className="gold-text">Driven by Quality</span>
+            Time-Bound Projects & <br />
+            <span className="gold-text">Timeless Relationship</span>
           </h2>
 
           <p className="builder-desc">

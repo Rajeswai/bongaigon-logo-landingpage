@@ -44,14 +44,14 @@ const AboutProject = () => {
               <Building2 size={34} />
             </div>
             <h4>Premium Residences</h4>
-            <small>2.5, 3 & 3.5 BHK Luxury Apartments</small>
+            <small>3 & 4 BHK Luxury Apartments</small>
           </div>
 
           <div className="about-feature">
             <div className="about-icon">
               <Trees size={34} />
             </div>
-            <h4>Landscaped Environment</h4>
+            <h4>Landscaped Garden</h4>
             <small>Beautiful Gardens & Open Spaces</small>
           </div>
 
