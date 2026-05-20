@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import "../App.css";
 
-import eveningView from "../assets/images/eveningview.png";
+import eveningView from "../assets/images/aboutartelivation.jpeg";
 import mainEntrance from "../assets/images/mainentrance.jpeg";
 import kidsPlayArea from "../assets/images/kidsplayarea.jpeg";
 import lobbyLounge from "../assets/images/lobbylounge.jpeg";
@@ -11,7 +11,7 @@ import splashPool from "../assets/images/splashpool.jpeg";
 
 const Gallery = () => {
   const galleryImages = [
-    { image: eveningView, title: "Evening View", className: "gallery-tall" },
+    { image: eveningView, title: "Morning View", className: "gallery-tall" },
     { image: lobbyLounge, title: "Lobby Lounge", className: "gallery-wide" },
     { image: mainEntrance, title: "Main Entrance", className: "gallery-small" },
     { image: kidsPlayArea, title: "Kids Play Area", className: "gallery-small" },

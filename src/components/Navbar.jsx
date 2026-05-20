@@ -8,7 +8,6 @@ const Navbar = ({ onOpenPopup }) => {
   const navItems = [
     { name: "Overview", id: "about-project" },
     { name: "Amenities", id: "amenities" },
-    { name: "Walkthrough", id: "walkthrough" },
     { name: "Gallery", id: "gallery" },
     { name: "Plans", id: "plan" },
     { name: "Location", id: "location" },

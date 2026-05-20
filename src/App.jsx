@@ -6,7 +6,6 @@ import Hero from "./components/Hero";
 import Highlights from "./components/Highlights";
 import AboutProject from "./components/AboutProject";
 import Amenities from "./components/Amenities";
-import Walkthrough from "./components/Walkthrough";
 import Gallery from "./components/Gallery";
 import FloorPlans from "./components/FloorPlans";
 import LocationAdvantage from "./components/LocationAdvantage";
@@ -99,7 +98,6 @@ class App extends React.Component {
           />
 
           <Amenities />
-          <Walkthrough />
 
           <CTASection
             title="Experience The Project"

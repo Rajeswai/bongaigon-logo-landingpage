@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import "../App.css";
-import heroImage from "../assets/images/herosectionimage.png";
+import heroImage from "../assets/images/herosectionimage.jpeg";
 
 const Hero = ({ onOpenPopup }) => {
   return (
