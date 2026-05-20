@@ -8872,23 +8872,49 @@ body.gallery-open .floating-form {
 }
 
 
-/* ===== FORCE HIDE STICKY SITE VISIT FORM WHEN GALLERY MODAL IS OPEN ===== */
-/* CSS-এর একদম শেষে এটা paste কর */
+/* ===== FINAL FIX: Gallery image open hole bottom/site visit form hide ===== */
 
-body.gallery-open [class*="site-visit"],
+body.gallery-open,
+html:has(.gallery-modal),
+body:has(.gallery-modal) {
+  overflow: hidden !important;
+}
+
+body.gallery-open .desktop-sticky-form,
+body.gallery-open .mobile-sticky-cta,
+body.gallery-open .site-visit-form,
+body.gallery-open .sticky-form,
+body.gallery-open .sticky-visit-form,
+body.gallery-open .bottom-sticky-form,
+body.gallery-open .popup-form,
+body.gallery-open .floating-form,
 body.gallery-open [class*="sticky"],
+body.gallery-open [class*="site-visit"],
+body.gallery-open [class*="bottom"],
 body.gallery-open [class*="floating"],
-body.gallery-open [class*="enquiry"],
-body.gallery-open [class*="contact-sticky"],
-body.gallery-open [class*="bottom-form"] {
+body:has(.gallery-modal) .desktop-sticky-form,
+body:has(.gallery-modal) .mobile-sticky-cta,
+body:has(.gallery-modal) .site-visit-form,
+body:has(.gallery-modal) .sticky-form,
+body:has(.gallery-modal) .sticky-visit-form,
+body:has(.gallery-modal) .bottom-sticky-form,
+body:has(.gallery-modal) .popup-form,
+body:has(.gallery-modal) .floating-form,
+body:has(.gallery-modal) [class*="sticky"],
+body:has(.gallery-modal) [class*="site-visit"],
+body:has(.gallery-modal) [class*="bottom"],
+body:has(.gallery-modal) [class*="floating"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  z-index: -1 !important;
 }
 
-/* Gallery modal সবকিছুর উপরে থাকবে */
-body.gallery-open .gallery-modal {
+.gallery-modal {
+  z-index: 2147483647 !important;
+}
+
+.gallery-modal-close,
+.gallery-modal-arrow {
   z-index: 2147483647 !important;
 }
