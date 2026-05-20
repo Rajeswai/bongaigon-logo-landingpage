@@ -43,7 +43,7 @@ const Contact = () => {
           <div className="contact-highlight-item">
             <Home />
             <div>
-              <h4>Premium 2.5, 3 & 3.5 BHK Homes</h4>
+              <h4>Premium 3 & 4 BHK Homes</h4>
               <span>Thoughtfully Designed Residences</span>
             </div>
           </div>
@@ -60,7 +60,7 @@ const Contact = () => {
 
       <div className="contact-form-card">
         <h3>
-          Download <strong>Brochure </strong>
+          Download <strong>Brochure</strong>
         </h3>
 
         <form>
@@ -85,11 +85,10 @@ const Contact = () => {
             <Building />
             <select required defaultValue="">
               <option value="" disabled>
-                I'm Interested In
+                I am Interested In
               </option>
-              <option value="residential">Residential Projects</option>
-              <option value="commercial">Commercial Projects</option>
-              <option value="ongoing">Ongoing Projects</option>
+              <option value="3 BHK">3 BHK</option>
+              <option value="4 BHK">4 BHK</option>
             </select>
           </div>
 

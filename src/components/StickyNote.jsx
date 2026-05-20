@@ -59,10 +59,8 @@ class StickyNote extends React.Component {
           </div>
 
           <select className="sticky-select">
-            <option>3 BHK-S</option>
-            <option>2.5 BHK</option>
             <option>3 BHK</option>
-            <option>3.5 BHK</option>
+            <option>4 BHK</option>
           </select>
 
           <div className="sticky-select time">

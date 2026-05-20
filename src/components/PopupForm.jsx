@@ -34,9 +34,8 @@ const PopupForm = ({ isOpen, onClose }) => {
         <div className="popup-input">
           <select className="select-box">
             <option>Interested In</option>
-            <option>2.5 BHK</option>
             <option>3 BHK</option>
-            <option>3.5 BHK</option>
+            <option>4 BHK</option>
           </select>
         </div>
 

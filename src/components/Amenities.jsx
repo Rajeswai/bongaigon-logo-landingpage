@@ -52,7 +52,7 @@ const Amenities = () => {
       icon: <Zap />,
       title: "Power Backup",
       description:
-        "Uninterrupted power backup for common areas only",
+        "Uninterrupted power backup for common areas only.",
     },
   ];
 
@@ -67,7 +67,7 @@ const Amenities = () => {
 
         <h2>
           Designed for Comfort <br />
-          <strong>Instead of Better use Modern</strong>
+          <strong>Build for Modern Living</strong>
         </h2>
 
         <div className="amenities-divider">
