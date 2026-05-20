@@ -8792,7 +8792,7 @@ body {
 .navbar .navbar-logo-box {
   position: relative !important;
   top: 4px !important;              /* যত বেশি negative, তত বেশি উপরে উঠবে */
-  left: 35px !important;              /* ডান দিকে সরবে */
+  left: 25px !important;              /* ডান দিকে সরবে */
   transform: none !important;
   margin: 0 !important;
   padding: 0 !important;
