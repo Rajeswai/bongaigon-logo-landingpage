@@ -8937,33 +8937,44 @@ body:has(.gallery-modal) [class*="floating"] {
 }
 
 
-/* Logo একটু ডান দিকে সরানোর জন্য */
-.navbar-logo-box {
-  transform: translateX(35px) translateY(22px) !important;
-}
+/* ===== FINAL FIX: Stable navbar logo alignment on laptop/desktop ===== */
+/* Laptop/Desktop: logo stays locked in one fixed flex position */
+@media (min-width: 851px) {
+  .navbar-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
 
-/* Tablet */
-@media (max-width: 1024px) {
+  .navbar .navbar-logo-box,
   .navbar-logo-box {
-    transform: translateX(25px) translateY(10px) !important;
+    position: relative !important;
+    top: 4px !important;
+    left: 25px !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    overflow: visible !important;
+    z-index: 99999 !important;
   }
 }
 
-/* Mobile */
+/* Tablet/Laptop: prevent logo from shifting differently at 1024px */
+@media (min-width: 851px) and (max-width: 1024px) {
+  .navbar .navbar-logo-box,
+  .navbar-logo-box {
+    top: 4px !important;
+    left: 25px !important;
+    transform: none !important;
+  }
+}
+
+/* Mobile: keep existing mobile logo behavior unchanged */
 @media (max-width: 850px) {
   .navbar-logo-box {
     transform: translateX(0) !important;
   }
 }
 
-
-
-
-/* ===== DEPLOY FORCE LOGO FIX ===== */
-body .navbar .navbar-container .navbar-logo-box {
-  position: relative !important;
-  top: -35px !important;
-  left: 35px !important;
-  transform: none !important;
-  z-index: 999999 !important;
-}
