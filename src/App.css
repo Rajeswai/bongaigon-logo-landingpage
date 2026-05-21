@@ -66,20 +66,71 @@ body {
   border-radius: 0 !important;
 }
 /* ================= MENU ================= */
+/* ............................Navbar................ */
+.navbar {
+  height: 180px !important;
+  overflow: visible !important;
+}
+
+body {
+  padding-top: 180px !important;
+}
+
+.navbar-container {
+  height: 180px !important;
+  padding: 0 30px !important;
+  align-items: center !important;
+  overflow: visible !important;
+  display: flex !important;
+}
+
+.navbar-logo-box {
+  transform: translateY(22px) !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
+}
+
+.navbar-logo {
+  width: 118px !important;
+  height: 118px !important;
+  object-fit: contain !important;
+  display: block !important;
+  border-radius: 0 !important;
+}
+
+/* ================= MENU ================= */
 .navbar-menu {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 36px;
-  margin: 0 36px 0 300px;
+  margin: 0 0 0 auto !important;
   padding: 0;
   flex: unset;
+  flex-wrap: nowrap !important;
 }
 
 .navbar-menu li {
   flex: unset;
   display: flex;
   justify-content: center;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-btn {
+  margin-left: 36px !important;
 }
 
 .navbar-menu li a {
