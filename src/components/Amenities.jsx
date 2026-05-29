@@ -1,21 +1,26 @@
 ﻿import React from "react";
 import {
-  Paintbrush, Bath, ArrowUpDown, PlugZap, Building2,
-  Toilet, CookingPot, Flame, Cctv, BatteryCharging, CalendarDays
+  Dumbbell,
+  Gamepad2,
+  Waves,
+  Baby,
+  UsersRound,
+  Building2,
+  ShieldCheck,
+  BatteryCharging,
+  CalendarDays,
 } from "lucide-react";
 import "../App.css";
 
 const amenities = [
-  { no: "01", icon: <Paintbrush />, title: "Internal Finish", text: "Premium quality materials for elegant interiors." },
-  { no: "02", icon: <Bath />, title: "Sanitary Wares", text: "High quality fittings for style and durability." },
-  { no: "03", icon: <ArrowUpDown />, title: "Elevator", text: "Smooth & safe elevators for every floor." },
-  { no: "04", icon: <PlugZap />, title: "Electrical", text: "Concealed wiring with premium fixtures." },
-  { no: "05", icon: <Building2 />, title: "Structure", text: "RCC framed structure for lasting strength." },
-  { no: "06", icon: <Toilet />, title: "Toilets", text: "Stylish & durable tiles with premium fittings." },
-  { no: "07", icon: <CookingPot />, title: "Kitchen", text: "Functional kitchen with modern design." },
-  { no: "08", icon: <Flame />, title: "Fire Safety", text: "Advanced fire safety systems for protection." },
-  { no: "09", icon: <Cctv />, title: "Security", text: "24x7 security with CCTV surveillance." },
-  { no: "10", icon: <BatteryCharging />, title: "Power Backup", text: "24/7 power backup for comfort." },
+  { icon: <UsersRound />, title: "Club House", text: "A refined space for community gatherings." },
+  { icon: <Dumbbell />, title: "Gymnasium", text: "Modern fitness space for everyday wellness." },
+  { icon: <Building2 />, title: "Community Hall", text: "Perfect for celebrations and family bonding." },
+  { icon: <Gamepad2 />, title: "Indoor Games", text: "Engaging recreation for all age groups." },
+  { icon: <Waves />, title: "Splash Pool", text: "Relaxing water zone for leisure moments." },
+  { icon: <Baby />, title: "Kid's Play Area", text: "Safe and joyful play space for children." },
+  { icon: <BatteryCharging />, title: "Power Backup", text: "Reliable backup for uninterrupted comfort." },
+  { icon: <ShieldCheck />, title: "Security", text: "Safe living with dedicated security support." },
 ];
 
 const Amenities = ({ onOpenPopup }) => {
@@ -25,14 +30,16 @@ const Amenities = ({ onOpenPopup }) => {
       <div className="amenities-orbit two"></div>
 
       <div className="amenities-heading">
-        <h2>Amenities</h2>
-        <p>Crafted for comfort. Built for life.</p>
+        <h2>Amenities & Facilities</h2>
+        <p>
+          <span>Crafted for comfort</span>{" "}
+          <strong>Built for modern life</strong>
+        </p>
       </div>
 
       <div className="amenities-grid">
-        {amenities.map((item) => (
-          <div className="amenity-card" key={item.no}>
-            <span className="amenity-number">{item.no}</span>
+        {amenities.map((item, index) => (
+          <div className="amenity-card" key={index}>
             <div className="amenity-icon">{item.icon}</div>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
@@ -42,8 +49,10 @@ const Amenities = ({ onOpenPopup }) => {
       </div>
 
       <button className="amenities-visit-btn" onClick={onOpenPopup}>
-        <span><CalendarDays size={18} /></span>
-        Book A Visit
+        <span>
+          <CalendarDays size={18} />
+        </span>
+        Book A Site Visit
         <b>→</b>
       </button>
     </section>

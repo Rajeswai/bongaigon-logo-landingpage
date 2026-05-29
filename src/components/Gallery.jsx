@@ -117,7 +117,7 @@ class Gallery extends React.Component {
           className="gallery-visit-btn"
           onClick={this.handleBookVisit}
         >
-          Book A Visit <b>→</b>
+          Download Brochure <b>→</b>
         </button>
 
         {activeImage && (

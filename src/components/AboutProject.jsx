@@ -1,5 +1,5 @@
 import React from "react";
-import { Building2, Leaf, MapPin } from "lucide-react";
+import { Building2, Landmark, Home } from "lucide-react";
 import "../App.css";
 import aboutImage from "../assets/images/aboutimage.png";
 
@@ -10,20 +10,15 @@ const AboutBuilder = () => {
         <div className="about-builder-left">
           <p className="about-builder-label">About Subham Park</p>
 
-          <div className="about-builder-line">
-            <span></span>
-            <i></i>
-          </div>
-
           <h2>
             Crafted For <br />
-            <strong>Modern Life.</strong>
+            <strong>Modern Life</strong>
           </h2>
 
           <p className="about-builder-text">
-            Thoughtfully crafted 3BHK & 4BHK residences designed for calm
-            modern living, comfort, and timeless elegance in the heart of
-            Bongaigaon.
+            A thoughtfully planned community in Bongaigaon, offering modern
+            living, excellent connectivity, and a peaceful environment for
+            families to thrive.
           </p>
 
           <div className="about-builder-features">
@@ -32,28 +27,28 @@ const AboutBuilder = () => {
                 <Building2 />
               </div>
               <div>
-                <h3>48</h3>
-                <p>Premium Units</p>
+                <h3>Premium Units</h3>
+                <p>48 Units</p>
               </div>
             </div>
 
             <div className="about-builder-feature">
               <div className="about-builder-icon">
-                <Leaf />
+                <Landmark />
               </div>
               <div>
-                <h3>Nature</h3>
-                <p>Inspired</p>
+                <h3>Elevated Living</h3>
+                <p>G+7 Storeys</p>
               </div>
             </div>
 
             <div className="about-builder-feature">
               <div className="about-builder-icon">
-                <MapPin />
+                <Home />
               </div>
               <div>
-                <h3>Prime</h3>
-                <p>Location</p>
+                <h3>3BHK & 4BHK</h3>
+                <p>Configurations</p>
               </div>
             </div>
           </div>

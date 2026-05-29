@@ -2,7 +2,7 @@
 import { ArrowRight, Download, MapPin } from "lucide-react";
 
 import "../App.css";
-import heroimage from "../assets/images/heroimage.png";
+import heroimage from "../assets/images/heroimage.jpeg";
 
 const Hero = ({ onOpenPopup }) => {
   return (
@@ -13,17 +13,16 @@ const Hero = ({ onOpenPopup }) => {
 
       <div className="hero-content">
         <h1 className="hero-title">
-          Luxury Meets
-          <span>natural</span>
-          Elegance
+         Step Into
+          <span>Spotlight Of</span>
+          Modern Living.
         </h1>
 
         <div className="hero-description">
           <p>
             Experience premium 3BHK & 4 BHK residences designed for refined
-            living, elegant comfort, and a lifestyle inspired by nature.
-            Thoughtfully crafted spaces, serene surroundings, and modern
-            architecture come together to create an address of timeless luxury.
+            living, elegant comfort, and a lifestyle inspired by modern sensibilities.
+           
           </p>
 
           <div className="hero-info">
