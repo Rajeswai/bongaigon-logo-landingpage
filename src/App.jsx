@@ -30,8 +30,11 @@ class App extends React.Component {
   }
 
   setupScrollAnimation = () => {
-    const items = document.querySelectorAll(
-      `
+    if (this.scrollObserver) {
+      this.scrollObserver.disconnect();
+    }
+
+    const items = document.querySelectorAll(`
       .hero-content,
       .highlight-marquee-section,
       .about-builder-left,
@@ -56,8 +59,9 @@ class App extends React.Component {
       .contact-left,
       .contact-form-card,
       .footer-info-block
-      `
-    );
+    `);
+
+    if (!items.length) return;
 
     items.forEach((item) => {
       item.classList.add("scroll-reveal");
@@ -72,12 +76,18 @@ class App extends React.Component {
         });
       },
       {
-        threshold: 0.16,
+        threshold: 0.08,
+        rootMargin: "0px 0px -20px 0px",
       }
     );
 
     items.forEach((item) => {
       this.scrollObserver.observe(item);
+
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        item.classList.add("scroll-show");
+      }
     });
   };
 
@@ -121,17 +131,16 @@ class App extends React.Component {
     window.addEventListener("scroll", this.handleStickyFooterScroll);
     window.addEventListener("resize", this.handleStickyFooterScroll);
     this.handleStickyFooterScroll();
-
-    setTimeout(() => {
-      this.setupScrollAnimation();
-    }, 300);
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.showLoader !== this.state.showLoader && !this.state.showLoader) {
       setTimeout(() => {
-        this.setupScrollAnimation();
-      }, 300);
+        requestAnimationFrame(() => {
+          this.setupScrollAnimation();
+          this.handleStickyFooterScroll();
+        });
+      }, 500);
     }
   }
 
@@ -165,9 +174,7 @@ class App extends React.Component {
 
         <main className="page-shell">
           <AboutProject />
-
           <Amenities onOpenPopup={this.openPopup} />
-
           <Gallery onOpenPopup={this.openPopup} />
           <FloorPlans />
           <LocationAdvantage />

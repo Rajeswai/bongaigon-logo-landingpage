@@ -6,9 +6,9 @@ import gallery1 from "../assets/images/lobbylounge.jpeg";
 import gallery2 from "../assets/images/splashpool.jpeg";
 import gallery3 from "../assets/images/semiarenaview.jpeg";
 import gallery4 from "../assets/images/gymnasium.jpeg";
-import gallery5 from "../assets/images/kids-play-area.png";
+import gallery5 from "../assets/images/kidsplayarea.jpeg";
 import gallery6 from "../assets/images/picture1.jpeg";
-import gallery7 from "../assets/images/indoor-games.png";
+import gallery7 from "../assets/images/indoorgamesroom.jpeg";
 import gallery8 from "../assets/images/mainentrance.jpeg";
 
 const galleryImages = [
