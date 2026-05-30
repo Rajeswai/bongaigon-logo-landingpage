@@ -25,7 +25,61 @@ class App extends React.Component {
       isPopupOpen: false,
       showLoader: true,
     };
+
+    this.scrollObserver = null;
   }
+
+  setupScrollAnimation = () => {
+    const items = document.querySelectorAll(
+      `
+      .hero-content,
+      .highlight-marquee-section,
+      .about-builder-left,
+      .about-builder-image-box,
+      .about-builder-feature,
+      .builder-heading,
+      .builder-intro-card,
+      .builder-stat-card,
+      .builder-projects-card,
+      .builder-strength-bar,
+      .amenities-heading,
+      .amenity-card,
+      .gallery-heading,
+      .gallery-card,
+      .floorplan-heading,
+      .floorplan-main,
+      .floorplan-side,
+      .location-heading,
+      .location-left,
+      .map-box,
+      .location-mini-features div,
+      .contact-left,
+      .contact-form-card,
+      .footer-info-block
+      `
+    );
+
+    items.forEach((item) => {
+      item.classList.add("scroll-reveal");
+    });
+
+    this.scrollObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-show");
+          }
+        });
+      },
+      {
+        threshold: 0.16,
+      }
+    );
+
+    items.forEach((item) => {
+      this.scrollObserver.observe(item);
+    });
+  };
 
   componentDidMount() {
     this.handleStickyFooterScroll = () => {
@@ -67,11 +121,27 @@ class App extends React.Component {
     window.addEventListener("scroll", this.handleStickyFooterScroll);
     window.addEventListener("resize", this.handleStickyFooterScroll);
     this.handleStickyFooterScroll();
+
+    setTimeout(() => {
+      this.setupScrollAnimation();
+    }, 300);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.showLoader !== this.state.showLoader && !this.state.showLoader) {
+      setTimeout(() => {
+        this.setupScrollAnimation();
+      }, 300);
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleStickyFooterScroll);
     window.removeEventListener("resize", this.handleStickyFooterScroll);
+
+    if (this.scrollObserver) {
+      this.scrollObserver.disconnect();
+    }
   }
 
   openPopup = () => {
@@ -84,11 +154,7 @@ class App extends React.Component {
 
   render() {
     if (this.state.showLoader) {
-      return (
-        <Key
-          onFinish={() => this.setState({ showLoader: false })}
-        />
-      );
+      return <Key onFinish={() => this.setState({ showLoader: false })} />;
     }
 
     return (

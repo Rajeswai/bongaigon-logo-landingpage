@@ -86,8 +86,8 @@ class Contact extends React.Component {
       <section className="contact-premium-section" id="contact">
         <div className="contact-left">
           <h2>
-            Let's Build Something <br />
-            <strong>Extraordinary Together</strong>
+            Take The First Step <br />
+            <strong>Towards Your Dream Home</strong>
           </h2>
 
           <p>

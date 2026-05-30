@@ -89,8 +89,8 @@ class Gallery extends React.Component {
         <div className="gallery-heading">
           <h2>Gallery</h2>
          <p>
-  <span>Crafted for comfort</span>{" "}
-  <strong>Built for modern life</strong>
+  <span>A Symphony</span>{" "}
+  <strong>Of Spaces</strong>
 </p>
         </div>
 

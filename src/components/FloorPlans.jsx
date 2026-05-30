@@ -86,8 +86,8 @@ class FloorPlans extends React.Component {
         <div className="floorplan-heading">
   <h2>Floor Plans</h2>
   <p>
-  <span>A Symphony of </span>
-  <strong>Space and Comfort</strong>
+  <span>Explore Your Ideal </span>
+  <strong>Home Layout</strong>
 </p>
 </div>
 
