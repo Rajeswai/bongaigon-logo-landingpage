@@ -604,19 +604,20 @@ body {
 
 .about-project-left h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(46px, 4vw, 72px);
+  font-size: 46px;
   line-height: 1.03;
-  letter-spacing: -1px;
-  text-transform: capitalize;
-  color: #253419;
-  font-weight: 500;
+  text-transform: none;
+  color: #000000;
+  font-weight: 400;
   margin: 0;
 }
 
 .about-project-left h2 strong {
   color: #c86b39;
-  font-weight: 500;
-  text-transform: capitalize;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 46px;
+  text-transform: none;
 }
 
 .about-project-text {
