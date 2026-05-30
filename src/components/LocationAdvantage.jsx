@@ -82,9 +82,16 @@ class LocationAdvantage extends React.Component {
       <section className="location-section" id="location">
         <div className="location-heading">
           <h2>Location</h2>
-          <p>
+
+          <p className="location-title">
             <span>Perfectly Connected</span>{" "}
             <strong>Everyday Living</strong>
+          </p>
+
+          <p className="location-subtext">
+            Experience the ease of living at Subham Park, where schools,
+            healthcare, railway connectivity, shopping and everyday essentials
+            are all thoughtfully placed within minutes from your home.
           </p>
         </div>
 
