@@ -1,5 +1,12 @@
 import React from "react";
-import { X, ZoomIn, ZoomOut, ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  X,
+  ZoomIn,
+  ZoomOut,
+  ArrowLeft,
+  ArrowRight,
+  Download,
+} from "lucide-react";
 import "../App.css";
 
 import gallery1 from "../assets/images/splashpool.webp";
@@ -154,12 +161,12 @@ class Gallery extends React.Component {
         <div className="gallery-btn-wrap">
           <button
             type="button"
-            className="gallery-visit-btn"
+            className="gallery-visit-btn brochure-cta"
             onClick={this.handleBookVisit}
           >
-            <span>⇩</span>
+            <Download aria-hidden="true" />
             Download Brochure
-            <b>→</b>
+            <ArrowRight aria-hidden="true" />
           </button>
         </div>
 

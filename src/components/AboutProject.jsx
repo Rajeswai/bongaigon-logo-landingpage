@@ -48,7 +48,7 @@ const AboutProject = () => {
               </div>
               <div>
                 <h3>Configurations</h3>
-                <p>3BHK & 4BHK</p>
+                <p>3 BHK &amp; 4 BHK</p>
               </div>
             </div>
           </div>

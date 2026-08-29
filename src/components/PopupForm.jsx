@@ -1,5 +1,5 @@
 import React from "react";
-import { X, User, Phone, Mail, Send, Clock } from "lucide-react";
+import { X, User, Phone, Mail, MapPin, Send } from "lucide-react";
 import { supabase, getUTMData } from "../supabase";
 import "../App.css";
 
@@ -15,7 +15,7 @@ class PopupForm extends React.Component {
         phone: "",
         email: "",
         interestedIn: "",
-        timing: "",
+        pincode: "",
       },
     };
   }
@@ -37,9 +37,9 @@ class PopupForm extends React.Component {
       !formData.phone ||
       !formData.email ||
       !formData.interestedIn ||
-      !formData.timing
+      !/^\d{6}$/.test(formData.pincode)
     ) {
-      alert("Please fill all details.");
+      alert("Please fill all details and enter a valid 6-digit pincode.");
       return;
     }
 
@@ -60,7 +60,7 @@ class PopupForm extends React.Component {
           popupTitle === "Download Brochure"
             ? "Download Brochure"
             : "Site Visit",
-        timing: formData.timing || null,
+        timing: formData.pincode ? `Pincode: ${formData.pincode}` : null,
 
         ...getUTMData(),
       },
@@ -89,7 +89,8 @@ class PopupForm extends React.Component {
             popupTitle === "Download Brochure"
               ? "Download Brochure"
               : "Site Visit",
-          timing: formData.timing || null,
+          timing: formData.pincode ? `Pincode: ${formData.pincode}` : null,
+          pincode: formData.pincode || null,
 
           ...getUTMData(),
         }),
@@ -104,7 +105,7 @@ class PopupForm extends React.Component {
         phone: "",
         email: "",
         interestedIn: "",
-        timing: "",
+        pincode: "",
       },
     });
 
@@ -192,24 +193,23 @@ class PopupForm extends React.Component {
                   onChange={this.handleChange}
                 >
                   <option value="">Interested In</option>
-                  <option value="3 BHK">3 BHK</option>
-                  <option value="4 BHK">4 BHK</option>
+                  <option value="3 BHK">3 BHK — ₹63.54L</option>
+                  <option value="4 BHK">4 BHK — ₹86.34L</option>
                 </select>
               </div>
 
               <div className="popup-input">
-                <Clock size={16} />
-                <select
-                  className="select-box"
-                  name="timing"
-                  value={this.state.formData.timing}
+                <MapPin size={16} />
+                <input
+                  type="text"
+                  name="pincode"
+                  inputMode="numeric"
+                  pattern="[0-9]{6}"
+                  maxLength={6}
+                  placeholder="Pincode"
+                  value={this.state.formData.pincode}
                   onChange={this.handleChange}
-                >
-                  <option value="">Preferred Time</option>
-                  <option value="Morning">Morning</option>
-                  <option value="Afternoon">Afternoon</option>
-                  <option value="Evening">Evening</option>
-                </select>
+                />
               </div>
 
               <button

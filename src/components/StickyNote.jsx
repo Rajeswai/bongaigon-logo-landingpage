@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, User, Phone, Mail, Send, Clock } from "lucide-react";
+import { Sparkles, User, Phone, Mail, MapPin, Send } from "lucide-react";
 import { supabase, getUTMData } from "../supabase";
 import "../App.css";
 
@@ -16,7 +16,7 @@ class StickyNote extends React.Component {
         phone: "",
         email: "",
         interestedIn: "3 BHK",
-        timing: "Morning",
+        pincode: "",
       },
     };
   }
@@ -54,8 +54,13 @@ class StickyNote extends React.Component {
   handleSubmit = async () => {
     const { formData } = this.state;
 
-    if (!formData.name || !formData.phone || !formData.email) {
-      alert("Please fill all details.");
+    if (
+      !formData.name ||
+      !formData.phone ||
+      !formData.email ||
+      !/^\d{6}$/.test(formData.pincode)
+    ) {
+      alert("Please fill all details and enter a valid 6-digit pincode.");
       return;
     }
 
@@ -68,7 +73,7 @@ class StickyNote extends React.Component {
         email: formData.email,
         interested_in: formData.interestedIn,
         requirement: "Site Visit",
-        timing: formData.timing || null,
+        timing: formData.pincode ? `Pincode: ${formData.pincode}` : null,
 
         ...getUTMData(),
       },
@@ -94,7 +99,8 @@ class StickyNote extends React.Component {
           email: formData.email,
           interested_in: formData.interestedIn,
           requirement: "Site Visit",
-          timing: formData.timing || null,
+          timing: formData.pincode ? `Pincode: ${formData.pincode}` : null,
+          pincode: formData.pincode || null,
 
           ...getUTMData(),
         }),
@@ -109,7 +115,7 @@ class StickyNote extends React.Component {
         phone: "",
         email: "",
         interestedIn: "3 BHK",
-        timing: "Morning",
+        pincode: "",
       },
     });
 
@@ -178,20 +184,23 @@ class StickyNote extends React.Component {
                 value={this.state.formData.interestedIn}
                 onChange={this.handleChange}
               >
-                <option>3 BHK</option>
-                <option>4 BHK</option>
+                <option value="3 BHK">3 BHK — ₹63.54L</option>
+                <option value="4 BHK">4 BHK — ₹86.34L</option>
               </select>
 
-              <select
-                className="sticky-select time"
-                name="timing"
-                value={this.state.formData.timing}
-                onChange={this.handleChange}
-              >
-                <option>Morning</option>
-                <option>Afternoon</option>
-                <option>Evening</option>
-              </select>
+              <div className="sticky-input sticky-pincode">
+                <MapPin size={14} />
+                <input
+                  type="text"
+                  name="pincode"
+                  inputMode="numeric"
+                  pattern="[0-9]{6}"
+                  maxLength={6}
+                  placeholder="Pincode"
+                  value={this.state.formData.pincode}
+                  onChange={this.handleChange}
+                />
+              </div>
 
               <button
                 className="sticky-submit"

@@ -2,12 +2,16 @@ import React from "react";
 import { ArrowRight, Download, MapPin } from "lucide-react";
 
 import "../App.css";
-import heroimage from "../assets/images/heroimage.webp";
+import heroimage from "../assets/images/g9.webp";
 
 const Hero = ({ onOpenPopup }) => {
   return (
     <section className="hero-section" id="home">
-      <img src={heroimage} alt="Subham Park" className="hero-bg" />
+      <img
+        src={heroimage}
+        alt="Subham Park residential building"
+        className="hero-bg"
+      />
 
       <div className="hero-overlay"></div>
 
@@ -27,8 +31,17 @@ it's not just a home; it's a lifestyle upgrade.
 
           <div className="hero-info">
             <div className="hero-info-card">
-              <small>Starts From</small>
-              <strong>64 Lakhs</strong>
+              <small>Starting Price</small>
+              <div className="hero-price-list">
+                <div className="hero-price-row">
+                  <span>3 BHK</span>
+                  <strong>₹63.54L</strong>
+                </div>
+                <div className="hero-price-row">
+                  <span>4 BHK</span>
+                  <strong>₹86.34L</strong>
+                </div>
+              </div>
             </div>
 
             <div className="hero-info-card">
@@ -43,17 +56,14 @@ it's not just a home; it's a lifestyle upgrade.
           <div className="hero-buttons">
             <button
               type="button"
-              className="hero-btn hero-btn-brochure"
+              className="hero-btn hero-btn-brochure brochure-cta"
               onClick={() => onOpenPopup("Download Brochure")}
             >
+              <Download aria-hidden="true" />
               Download Brochure
-              <Download size={17} />
+              <ArrowRight aria-hidden="true" />
             </button>
 
-            <a href="#about" className="hero-btn hero-btn-explore">
-              Explore More
-              <ArrowRight size={18} />
-            </a>
           </div>
         </div>
       </div>

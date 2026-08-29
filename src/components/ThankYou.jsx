@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight, Download } from "lucide-react";
 import "../App.css";
 import logo from "../assets/images/logoimage.webp";
 import thankyouBg from "../assets/images/thankyoubg.webp";
@@ -23,8 +24,14 @@ const ThankYou = () => {
         </p>
 
         <div className="thankyou-hero-buttons">
-          <a href="/park-bongaigaon/Brochure.pdf" download className="thankyou-hero-download">
+          <a
+            href="/park-bongaigaon/Brochure.pdf"
+            download
+            className="thankyou-hero-download brochure-cta"
+          >
+            <Download aria-hidden="true" />
             Download Brochure
+            <ArrowRight aria-hidden="true" />
           </a>
 
           <a href="/park-bongaigaon/" className="thankyou-hero-home">

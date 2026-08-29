@@ -4,7 +4,7 @@ import {
   Phone,
   Mail,
   Building,
-  Clock,
+  MapPin,
   ArrowRight,
   BadgeCheck,
   Home,
@@ -25,7 +25,7 @@ class Contact extends React.Component {
         phone: "",
         email: "",
         interestedIn: "",
-        timing: "",
+        pincode: "",
       },
     };
   }
@@ -53,7 +53,7 @@ class Contact extends React.Component {
         email: formData.email,
         interested_in: formData.interestedIn,
         requirement: "Download Brochure",
-        timing: formData.timing || null,
+        timing: formData.pincode ? `Pincode: ${formData.pincode}` : null,
 
         ...getUTMData(),
       },
@@ -79,7 +79,8 @@ class Contact extends React.Component {
           email: formData.email,
           interested_in: formData.interestedIn,
           requirement: "Download Brochure",
-          timing: formData.timing || null,
+          timing: formData.pincode ? `Pincode: ${formData.pincode}` : null,
+          pincode: formData.pincode || null,
 
           ...getUTMData(),
         }),
@@ -94,7 +95,7 @@ class Contact extends React.Component {
         phone: "",
         email: "",
         interestedIn: "",
-        timing: "",
+        pincode: "",
       },
     });
 
@@ -208,26 +209,24 @@ class Contact extends React.Component {
                   <option value="" disabled>
                     I am Interested In
                   </option>
-                  <option value="3 BHK">3 BHK</option>
-                  <option value="4 BHK">4 BHK</option>
+                  <option value="3 BHK">3 BHK — ₹63.54L</option>
+                  <option value="4 BHK">4 BHK — ₹86.34L</option>
                 </select>
               </div>
 
               <div className="input-box">
-                <Clock />
-                <select
+                <MapPin />
+                <input
+                  type="text"
                   required
-                  name="timing"
-                  value={this.state.formData.timing}
+                  name="pincode"
+                  inputMode="numeric"
+                  pattern="[0-9]{6}"
+                  maxLength={6}
+                  placeholder="Pincode"
+                  value={this.state.formData.pincode}
                   onChange={this.handleChange}
-                >
-                  <option value="" disabled>
-                    Preferred Time
-                  </option>
-                  <option value="Morning">Morning</option>
-                  <option value="Afternoon">Afternoon</option>
-                  <option value="Evening">Evening</option>
-                </select>
+                />
               </div>
 
               <button
