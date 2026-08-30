@@ -163,7 +163,7 @@ class FloorPlans extends React.Component {
             className="floorplan-hero-frame"
             onClick={() => this.openModal(activeIndex)}
           >
-            <img src={selectedPlan.img} alt={selectedPlan.title} />
+            <img src={selectedPlan.img} alt={selectedPlan.title} loading="lazy" decoding="async" />
 
             <div className="floorplan-drag-note">
               <span></span>
@@ -182,7 +182,7 @@ class FloorPlans extends React.Component {
                 >
                   <i>{String(index + 1).padStart(2, "0")}</i>
 
-                  <img src={plan.img} alt={plan.title} />
+                  <img src={plan.img} alt={plan.title} loading="lazy" decoding="async" />
 
                   <div>
                     <strong>{plan.title}</strong>

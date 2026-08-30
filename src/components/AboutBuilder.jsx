@@ -80,7 +80,7 @@ class AboutBuilder extends React.Component {
 
           <div className="builder-intro-card builder-reveal">
             <div className="builder-logo-box">
-              <img src={subhamLogo} alt="Subham Group Logo" />
+              <img src={subhamLogo} alt="Subham Group Logo" loading="lazy" decoding="async" />
             </div>
 
             <div className="builder-intro-text">

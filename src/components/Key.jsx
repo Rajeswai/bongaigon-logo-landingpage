@@ -20,7 +20,7 @@ class Key extends React.Component {
       <div className="key-loader">
         <div className="key-loader-content">
           <div className="key-logo-ring">
-            <img src={logoImg} alt="Subham Park" />
+            <img src={logoImg} alt="Subham Park" loading="eager" fetchPriority="high" decoding="async" />
           </div>
 
           <span className="key-small-title">

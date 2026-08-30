@@ -11,6 +11,9 @@ const Hero = ({ onOpenPopup }) => {
         src={heroimage}
         alt="Subham Park residential building"
         className="hero-bg"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
 
       <div className="hero-overlay"></div>

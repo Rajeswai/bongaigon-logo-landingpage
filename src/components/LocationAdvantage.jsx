@@ -126,6 +126,8 @@ const LocationAdvantage = () => {
               className="location-map-img"
               src={mapImage}
               alt="Subham Park Location Map"
+              loading="lazy"
+              decoding="async"
             />
 
             <a

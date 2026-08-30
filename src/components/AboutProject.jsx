@@ -55,7 +55,7 @@ const AboutProject = () => {
         </div>
 
         <div className="about-project-image-box">
-          <img src={aboutImage} alt="Subham Park" />
+          <img src={aboutImage} alt="Subham Park" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

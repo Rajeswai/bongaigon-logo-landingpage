@@ -147,6 +147,8 @@ class Gallery extends React.Component {
               <img
                 src={item.img}
                 alt={item.title}
+                loading="lazy"
+                decoding="async"
                 className={item.fit === "contain" ? "gallery-img-contain" : ""}
               />
 

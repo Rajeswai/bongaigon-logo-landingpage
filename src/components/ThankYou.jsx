@@ -13,7 +13,7 @@ const ThankYou = () => {
       <div className="thankyou-hero-overlay"></div>
 
       <div className="thankyou-hero-content">
-        <img src={logo} alt="Subham Park" className="thankyou-hero-logo" />
+        <img src={logo} alt="Subham Park" className="thankyou-hero-logo" loading="lazy" decoding="async" />
 
         <h1>
          Thank you for choosing <span> Subham Park Bongaigoan</span>

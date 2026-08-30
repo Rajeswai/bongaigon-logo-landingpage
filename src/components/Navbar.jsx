@@ -81,6 +81,9 @@ class Navbar extends React.Component {
                 src={logoimage}
                 alt="Subham Park Logo"
                 className="navbar-logo"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </a>
 

@@ -5373,10 +5373,11 @@ body:has(.thankyou-hero-page) {
 
 .builder-project-pill:hover,
 .builder-project-pill.active {
-  background: #c86b39;
+  background: #788344;
+  border-color: #788344;
   color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(37, 52, 25, 0.18);
+  box-shadow: 0 10px 22px rgba(120, 131, 68, 0.35);
 }
 
 .completed-pill {
@@ -5386,8 +5387,10 @@ body:has(.thankyou-hero-page) {
 
 .completed-pill:hover,
 .completed-pill.active {
-  background: #c86b39;
+  background: #788344;
+  border-color: #788344;
   color: #ffffff;
+  box-shadow: 0 10px 22px rgba(120, 131, 68, 0.35);
 }
 
 .builder-project-address {
@@ -5396,14 +5399,14 @@ body:has(.thankyou-hero-page) {
   border-radius: 18px;
   background: #fbf7ef;
   border: 1px solid rgba(120, 131, 68, 0.16);
-  border-left: 5px solid #c86b39;
+  border-left: 5px solid #788344;
   box-shadow: 0 12px 24px rgba(37, 52, 25, 0.08);
   font-weight: 400;
 }
 
 .builder-project-address h4 {
   margin: 0 0 6px;
-  color: #c86b39;
+  color: #788344;
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
   font-weight: 700;
